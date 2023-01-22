@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+	  <t t-name="ClientwaitControlButton" owl="1">
+        <div class="clientlist-screen screen">
+             <div class="screen-content">
+                <div class="top-content">
+                   <div class="button back" t-on-click="back">
+                       Back
+                   </div>
+                   <div class="button" t-on-click="onsave">
+                       Guardar
+                   </div>                                   
+               </div>
+               <div class="client-details-box clearfix">
+                   <div class="client-details-left">
+                        <div class="client-detail">
+                                <span class="label">Cliente</span>
+                                <input class="detail" name="cliente"
+                                       t-on-change="captureclient" placeholder="Cliente" />
+                        </div>
+                        <div class="client-detail">
+                                <span class="label">Teléfono</span>
+                                <input class="detail" name="telefono"
+                                       t-on-change="capturephone" placeholder="Teléfono" />
+                        </div>
+                        <div class="client-detail">
+                                <span class="label">Comensales</span>
+                                <input class="detail" name="no_clientes"
+                                       t-on-change="captureNoclient" placeholder="No. clientes" />
+                        </div>
+                        <div class="client-detail">
+                            <span class="label">Tiempo espera</span>
+                            <input class="detail" name="tiempo_espera"
+                                   t-on-change="capturetime" placeholder="Tiempo espera" />
+                        </div>
+                    </div>
+                   <!--  <div class="client-detail">
+                        <span class="label">Piso</span>
+                        <select class="detail" name="restaurant_floor" t-on-change="captureChange">
+                            <option value="">None</option>
+                            <t t-foreach="restaurant_floor" t-as="country" t-key="country.id">
+                                <option t-att-value="country.id">
+                                  <t t-esc="country.name"/>  
+                                </option>                                  
+                            </t>    
+                        </select>
+                    </div> -->
+                  
+                </div>
+             </div>
+             
+        </div>
+       
+    </t>
+
+
+</templates>

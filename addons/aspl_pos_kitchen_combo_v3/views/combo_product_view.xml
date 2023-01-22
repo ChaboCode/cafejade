@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="only_in_combo_product_template_only_form_view" model="ir.ui.view">
+            <field name="name">package.product.template.form.view</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="point_of_sale.product_template_form_view"/>
+            <field name="arch" type="xml">
+
+                <field name="available_in_pos" position="after">
+                    <field name="only_in_combo" attrs="{'invisible': [('available_in_pos', '=', False)]}"/>
+                </field>
+
+            </field>
+        </record>
+
+
+        <record id="combo_product_template_only_form_view" model="ir.ui.view">
+            <field name="name">package.product.template.form.view</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <field name="sale_ok" position="before">
+                    <div>
+                        <field name="is_combo"/>
+                        <label for="is_combo"/>
+                    </div>
+
+                </field>
+                <xpath expr='//page[4]' position="after">
+                    <page string="Combo" attrs="{'invisible': [('is_combo', '=', False)]}">
+                        <field name="product_combo_ids">
+                            <tree>
+                                <field name="sequence" widget="handle"/>
+                                <field name="display_name"
+                                       attrs="{'invisible': [('require', '=', True)],'required': [('require', '=', False)]}"/>
+                                <field name="require" string="Se incluye siempre?"/>
+                                <field name="product_ids"
+                                       context="{'is_required': require}"/>
+                                <field name="replaceable" invisible="1"/>
+                                <field name="base_price" invisible="1"/>
+                                <field name="no_of_items" string="No.máximo articulos elegibles"/>
+                            </tree>
+                            <form>
+                                <group>
+                                    <group string="">
+                                        <field name="display_name"
+                                               attrs="{'invisible': [('require', '=', True)],'required': [('require', '=', False)]}"/>
+                                        <field name="require" string="Se incluye siempre?"/>
+                                        
+                                    </group>
+                                    <group string="">
+                                        <field name="no_of_items" string="No.máximo articulos elegibles"/>
+                                        <field name="replaceable" invisible="1"/>
+                                        <field name="base_price" invisible="1"/>
+                                    </group>
+                                </group>
+                                <field name="product_ids"
+                                               context="{'is_required': require}">
+                                               <tree editable="button">
+                                                <field name="product_id" required="1" />
+                                                <field name="quantity" />
+                                                <field name="quantity_uom" />
+                                                <field name="price_extra" />
+                                                <field name="product_combo_ids" invisible="1"/>
+                                               </tree>
+                                           </field>
+                            </form>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

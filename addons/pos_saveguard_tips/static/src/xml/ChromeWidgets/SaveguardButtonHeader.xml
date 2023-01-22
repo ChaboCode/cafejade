@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<templates id="template" xml:space="preserve">
+	<t t-name="SaveguardButtonProduct" owl="1">
+		<div class="ticket-button" t-att-class="{ highlight: props.isTicketScreenShown }" t-on-click="onClick">
+            <div class="with-badge" t-att-badge="count">
+                <i class="fa fa-shield" aria-hidden="true"></i>
+            </div>
+            <div t-if="!env.isMobile">Salvaguarda</div>
+        </div>
+	 </t>
+
+
+	<t t-name="MenuButtonCut" owl="1" >
+		<div class="ticket-button" t-on-click="onClick" >
+		       <img class="pos-logo-corte-caja" src="/pos_saveguard_tips/static/src/img/cash-mac.png" alt="Logo" />
+		</div>
+	</t>
+
+	 <t t-name="MenuButtonlt" owl="1" >
+	 
+		<div class="ticket-button menuitem_pos_ogum" t-att-class="{ highlight: props.isTicketScreenShown }" t-on-click="onClick" >
+            <select id="menuitem" class="select_menuitem">
+					<option value='0' class="options">Opciones</option>
+					<option value='1' class="options"> 
+						Generar Salvaguarda
+					</option>
+					<option value='2' class="options"> 
+						Reporte de propinas
+					</option>
+					<option value='3' class="options"> 
+						Cambio de turno
+					</option>
+			
+			</select>
+			
+        </div>
+	</t>
+
+	
+
+
+	<t t-name="Chrome" t-inherit="point_of_sale.Chrome" t-inherit-mode="extension" owl="1">
+
+
+
+			<xpath expr="//Portal" position="replace">
+				<div class="position-buttonlt">
+					<MenuButtonlt t-if="isManager"/>
+				</div>
+            <Portal target="'.pos .status-buttons-portal'">
+
+                <div class="status-buttons">
+                    <t t-if="!env.isMobile">
+                        <CashierName />
+                    </t>
+                    <t t-if="isTicketButtonShown">
+                        <OrderManagementButton t-if="env.pos.config.manage_orders" />
+                    </t>
+                    <SaleDetailsButton t-if="env.pos.proxy.printer" />
+                    <ProxyStatus t-if="env.pos.config.use_proxy" />
+                    <ClientScreenButton t-if="clientScreenButtonIsShown" />
+                    <SyncNotification />
+					<MenuButtonCut t-if="isCashier or isManager" />
+                    <KitchenScreenButton t-if="isManager" isKitchenScreen="isKitchenScreen"/>
+                    <OrderSyncScreenButton t-if="isManager"/>
+                    <HeaderButton />
+                </div>
+            </Portal>
+        </xpath>
+
+
+	</t>
+
+
+	<t t-name="ClosePosPopup"  t-inherit="point_of_sale.ClosePosPopup"  t-inherit-mode="extension" owl="1">
+		<xpath expr="//div[hasclass('modal-dialog')]" position="replace">
+        <div role="dialog" class="modal-dialog">
+            <div class="popup close-pos-popup">
+                <header class="title">
+                    CLOSING CONTROL
+                </header>
+                <main class="body">
+                    <div class="session-overview">
+                        <div class="overview-info">
+                            <div class="info-title column-left">
+                                <span>Total <t t-esc="ordersDetails.quantity"/> orders</span>
+                                <span>Payments</span>
+                                <span>Customer Account</span>
+                            </div>
+                            <div class="info-value column-left">
+                                <span t-esc="env.pos.format_currency(ordersDetails.amount)"/>
+                                <span t-esc="env.pos.format_currency(paymentsAmount)"/>
+                                <span t-esc="env.pos.format_currency(payLaterAmount)"/>
+                            </div>
+                        </div>
+                        <div t-if="openingNotes" class="opening-note">
+                            <t t-esc="openingNotes"/>
+                        </div>
+                    </div>
+                    <div class="payment-methods-overview">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Payment Method</th>
+                                    <th>Expected</th>
+                                    <th style="width: 25%">Counted</th>
+                                    <th style="width: 20%">Difference</th>
+                                </tr>
+                            </thead>
+                            <t t-if="cashControl">
+                                <tbody>
+                                    <tr>
+                                        <td t-esc="defaultCashDetails.name"/>
+                                        <td t-esc="env.pos.format_currency(defaultCashDetails.amount)"/>
+                                        <td class="flex" t-on-input="handleInputChange(defaultCashDetails.id)">
+                                            <input class="pos-input" type="number" t-model.number="state.payments[defaultCashDetails.id].counted"/>
+                                            <div class="button icon" t-on-click="openDetailsPopup()">
+                                                <i class="fa fa-calculator" role="img" title="Open the money details popup"/>
+                                            </div>
+                                        </td>
+                                        <td t-esc="env.pos.format_currency(state.payments[defaultCashDetails.id].difference)" t-att-class="{'warning': state.payments[defaultCashDetails.id].difference}"/>
+                                    </tr>
+                                </tbody>
+                                <tbody class="cash-overview">
+                                    <tr>
+                                        <td>Opening</td>
+                                        <td t-esc="env.pos.format_currency(defaultCashDetails.opening)"/>
+                                    </tr>
+                                    <tr t-foreach="defaultCashDetails.moves" t-as="move" t-key="move.name">
+                                        <td>
+                                            <div class="flex">
+                                                <div class="cash-sign" t-esc="move.amount &lt; 0 ? '-' : '+'"/>
+                                                <t t-esc="move.name"/>
+                                            </div>
+                                        </td>
+                                        <td t-esc="env.pos.format_currency(Math.abs(move.amount))" />
+                                    </tr>
+                                    <tr t-if="defaultCashDetails.payment_amount">
+                                        <td>
+                                            <div class="flex">
+                                                <div class="cash-sign" t-esc="defaultCashDetails.payment_amount &lt; 0 ? '-' : '+'"/>
+                                                Payments in <t t-esc="defaultCashDetails.name"/>
+                                            </div>
+                                        </td>
+                                        <td t-esc="env.pos.format_currency(Math.abs(defaultCashDetails.payment_amount))"/>
+                                    </tr>
+                                </tbody>
+                            </t>
+                            <tbody t-if="otherPaymentMethods.length &gt; 0">
+                                <tr t-foreach="otherPaymentMethods" t-as="pm" t-key="pm.id">
+                                    <td t-esc="pm.name"/>
+                                    <td t-esc="env.pos.format_currency(pm.amount)"/>
+                                    <t t-set="_showDiff" t-value="_getShowDiff(pm)" />
+                                    <td t-if="_showDiff" t-on-input="handleInputChange(pm.id)"><input class="pos-input" type="number" t-model.number="state.payments[pm.id].counted"/></td>
+                                    <td t-if="_showDiff" t-esc="env.pos.format_currency(state.payments[pm.id].difference)" t-att-class="{'warning': state.payments[pm.id].difference}"/>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <textarea placeholder="Notes" class="closing-notes" t-model="state.notes"/>
+                    <div class="accept-closing" t-att-class="{invisible: !hasDifference()}">
+                        <t t-set="_hasUserAuthority" t-value="hasUserAuthority()" />
+                        <input t-att-disabled="!_hasUserAuthority" type="checkbox" id="accept" t-model="state.acceptClosing"/>
+                        <label t-att-class="{disabled: !_hasUserAuthority}" for="accept">Accept payments difference and post a profit/loss journal entry</label>
+                        <div class="warning" t-att-class="{invisible: _hasUserAuthority}">The maximum difference allowed is <t t-esc="env.pos.format_currency(amountAuthorizedDiff)"/>. Please contact your manager to accept the closing difference.</div>
+                    </div>
+                </main>
+                <footer class="footer">
+                    <div class="button" t-att-class="{'disabled': !canCancel()}" t-on-click="cancelPopup()">Continue Selling</div>
+                    <div class="button" t-on-click="closePos()">Keep Session Open</div>
+                    <div class="button" t-att-class="{'disabled': !canCloseSession()}" t-on-click="closeSession()">Close Session</div>
+                </footer>
+            </div>
+            <MoneyDetailsPopup t-ref="moneyDetails" t-on-money-details-validated="updateCountedCash"/>
+        </div>
+       </xpath>
+    </t>
+
+
+ <t t-name="SaveTipsButtonProduct" owl="1">
+		<div class="customer-button">
+			<div class="button save-tips-button"  t-on-click="selectTipsNew">
+			<i class="fa fa-inbox"></i>
+			<span></span>
+			<span>Propinas</span>
+		</div>
+		</div>
+	</t>
+
+	<t t-inherit="point_of_sale.PaymentScreen" t-inherit-mode="extension">
+		<xpath expr="//div[hasclass('payment-controls')]" position="after">
+				<br/>
+				<t t-if="get_tips.tips">
+					<table>
+						<t t-foreach="get_tips.tips" t-as="propina" t-key="propina">
+							<tr>
+								<td width='60%'>
+									<t t-esc='propina.metodo'/>
+								</td>
+								<td width='10%'>
+								</td>
+								<td width='30%'>
+									<t t-esc='env.pos.format_currency(propina.monto)'/>
+								</td>
+							</tr>
+						</t>					
+					</table>
+				</t>
+				<br/>
+				<SaveTipsButtonProduct />
+		</xpath>
+		<xpath expr="//div[hasclass('payment-controls')]" position="after">
+			<br/>
+			<SaveTipsButtonProduct  t-if="env.isMobile" />
+		</xpath>
+	</t>
+
+	<t t-name="SelectWaiterProduct" owl="1">
+
+	<div class="waiter_assign" >
+                <t t-if="env.pos.waitername">
+                   Mesero: <t t-esc="env.pos.waitername" />
+                </t>
+                <t t-else="">
+                    <i class="fa fa-user-plus"/> Asignar mesero
+                </t>
+	</div>
+	</t>
+
+
+	<t t-name="ReasingWaiterProduct" owl="1">
+	<div class="tipsreport" >
+			<div>
+			<i class="fa fa-refresh"></i>
+			<span></span>
+			<span>Reasignar mesero</span>
+		</div>
+		</div>
+	</t>
+
+
+    <t t-inherit="point_of_sale.ActionpadWidget" t-inherit-mode="extension">
+		<xpath expr="//button" position="after">
+				<SelectWaiterProduct/>
+		</xpath>
+		
+	</t>
+
+
+	<t t-inherit="point_of_sale.OrderReceipt" t-inherit-mode="extension">
+		<xpath expr="//div[hasclass('before-footer')]" position="before">
+			<div>Agradecimiento del cliente<span t-esc="env.pos.format_currency(receipt.total)" class="pos-receipt-right-align"/></div>	
+		</xpath>
+		
+	</t>
+
+	<t t-name="CashInOutStatementButton" owl="1">
+		<span class="tipsreport" >
+			<i class="fa fa-print"></i>
+			<span> </span>
+			<span>Reporte propinas</span>
+		</span>
+	</t>
+
+	<t t-name="CashInReceiptScreen" owl="1">
+		<div class="receipt-screen screen">
+			<div class="screen-content">
+				<div class="top-content">
+					<span class="button back" t-on-click="back">
+						<i class="fa fa-angle-double-left"></i>
+						<span> </span>
+						<span>Regresar</span>
+					</span>
+					<div class="top-content-center">
+						<h1>Imprimir</h1>
+					</div>
+				</div>
+				<div class="centered-content touch-scrollable">
+					<div class="button print" t-on-click="printReceipt">
+						<i class="fa fa-print"></i>
+						<span>Imprimir</span>
+					</div>
+					<div class="pos-cash-receipt-container">
+						<CashInReceipt
+							operation="props.operation"
+							amount = "props.amount"
+							purpose = "props.purpose"
+							method = "props.method"
+							nombre_usuario = "props.nombre_usuario"
+							t-ref="order-receipt"
+						/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</t>
+
+	<t t-name="CashInReceipt" owl="1">
+		<div class="pos-receipt-container">
+			<div >
+				<t t-esc="env.pos.company.name"/><br />
+				<div class="receipt-phone">
+					Telefono: <t t-esc="env.pos.company.phone || ''"/><br />
+				</div>
+				<div class="receipt-user">
+					Correo electronico: <t t-esc="env.pos.company.email || ''"/><br />
+				</div>
+				<div class="receipt-user">
+					Mesero: <t t-esc="props.nombre_usuario"/><br />
+				</div>
+				
+				<div class="receipt-user">
+					Operación: <t t-esc="props.operation"/><br />
+				</div>
+
+				<div class="receipt-user">
+					Concepto: <t t-esc="props.purpose || ''"/><br />
+				</div>
+
+				<div class="receipt-user">
+					Metodo de pago: <t t-esc="props.method || ''"/><br />
+				</div>
+
+				<div class="receipt-user">
+					Monto: $<t t-esc="props.amount || ''"/><br />
+				</div>
+				<br/>
+				<div style="margin-top:70px;text-align: center;">
+				<p style="border-top: 2px dashed black;"></p>
+				<b><span>Firma</span></b>
+			</div>
+			</div>
+		</div>
+	</t>
+
+
+   	<t t-name="CashOutReceiptScreen" owl="1">
+		<div class="receipt-screen screen">
+			<div class="screen-content">
+				<div class="top-content">
+					<span class="button back" t-on-click="back">
+						<i class="fa fa-angle-double-left"></i>
+						<span> </span>
+						<span>Regresar</span>
+					</span>
+					<div class="top-content-center">
+						<h1>Imprimir</h1>
+					</div>
+				</div>
+				<div class="centered-content touch-scrollable">
+					<div class="button print" t-on-click="printReceipt">
+						<i class="fa fa-print"></i>
+						<span>Imprimir</span>
+					</div>
+					<div class="pos-cash-receipt-container">
+						<CashOutReceipt
+							operation="props.operation"
+							amount = "props.amount"
+							purpose = "props.purpose"
+							t-ref="order-receipt"
+						/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</t>
+
+	<t t-name="CashOutReceipt" owl="1">
+		<div class="pos-receipt-container">
+			<div >
+				<t t-esc="env.pos.company.name"/><br />
+				<div class="receipt-phone">
+					Telefono: <t t-esc="env.pos.company.phone || ''"/><br />
+				</div>
+				<div class="receipt-user">
+					Correo electronico: <t t-esc="env.pos.company.email || ''"/><br />
+				</div>
+				<div class="receipt-user">
+					Responsable: <t t-esc="env.pos.get_cashier().name"/><br />
+				</div>
+				
+				<div class="receipt-user">
+					Operación: <t t-esc="props.operation"/><br />
+				</div>
+
+				<div class="receipt-user">
+					Concepto: <t t-esc="props.purpose || ''"/><br />
+				</div>
+
+				<div class="receipt-user">
+					Monto: $<t t-esc="props.amount || ''"/><br />
+				</div>
+				<br/>
+				<div style="margin-top:70px;text-align: center;">
+				<p style="border-top: 2px dashed black;"></p>
+				<b><span>Firma</span></b>
+			</div>
+			</div>
+		</div>
+	</t>
+
+	<t t-name="CashInOutStatementPopup" owl="1">
+		<div role="dialog" class="modal-dialog">
+			<Draggable>
+				<div class="popup">
+					<header class="title drag-handle">
+						Imprimir
+					</header>
+					<main class="body" style="font-family: 'Lato-Reg';">
+						<table  class="popup-table">
+							<tr>
+								<td>General/por mesero:</td>
+								<td>
+									<select id="cashier" class="cashier-selection">
+										<option>General</option>
+										<t t-foreach="get_data_waiters.data_waiters" t-as="metodo" t-key="metodo">
+												<option t-att-value='metodo.id'> 
+												<t t-esc='metodo.name'/>
+											</option>
+										</t>
+									</select>
+
+									
+
+										
+								</td>
+							</tr>		
+							
+						</table>
+					</main>
+					<footer class="footer">
+						<div class="button cancel odoo-theme-color" t-on-click="cancel">
+							Cancelar
+						</div>
+						<div class="button cancel odoo-theme-color" t-on-click="print_cash_in_out_statement">
+							Imprimir
+						</div>
+					</footer>
+				</div>
+			</Draggable>
+		</div>
+	</t>
+	
+	<t t-name="StatementReportScreen" owl="1">
+		<div class="receipt-screen screen">
+			<div class="screen-content">
+				<div class="top-content">
+					<span class="button back" t-on-click="back">
+						<i class="fa fa-angle-double-left"></i>
+						<span> </span>
+						<span>Regresar</span>
+					</span>
+					<div class="top-content-center">
+						<h1> Imprimir</h1>
+					</div>
+				</div>
+				<div class="centered-content touch-scrollable">
+					<div class="button print" t-on-click="printReceipt">
+						<i class="fa fa-print"></i>
+						<span>Imprimir</span>
+					</div>
+					<div class="pos-statement-receipt-container">
+						<StatementSummaryReceipt
+							statement_data = "props.statement_data"
+							date = "props.date"
+							t-ref="order-receipt"
+						/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</t>
+
+	<t t-name="StatementSummaryReceipt" owl="1">
+		<div class="pos-receipt-container">
+			<div class="pos-center-align" style="text-align: center;">
+				
+				<t t-esc="date_o"/> <br/>
+				<t t-esc="env.pos.company.name"/><br />
+				<div class="receipt-phone">
+					Telefono: <t t-esc="env.pos.company.phone || ''"/><br />
+				</div>
+				<div class="receipt-user">
+					Cajero: <t t-esc="env.pos.get_cashier().name"/><br />
+				</div>
+				<div class="receipt-user">
+					Correo electronico: <t t-esc="env.pos.company.email || ''"/><br />
+				</div>
+				<br />
+				<t t-if="!order_current_session">
+					<div class="receipt-periods" style="width: 301px;">
+						Fecha: <span t-esc="props.date"/>
+						
+					</div>
+				</t>
+				<br/>
+
+				<table class='pos-center-align' style="margin-top: 10px;width: 100% !important; border-bottom: 2px solid black;">
+					<colgroup>
+						<col width='25%' />
+						<col width='25%' />
+						<col width='25%' />
+						<col width='25%' />
+					</colgroup>
+					<thead>
+						<tr style="border-bottom: 2px solid black;">
+							<th>Fecha</th>
+							<th>Mesero</th>
+							<th>Metodo pago</th>
+							<th class="pos-center-align">Monto propina</th>
+						</tr>
+					</thead>
+					<tbody style="font-size:12px;">
+						<tr t-foreach="props.statement_data[1]" t-as="summery1">
+							<td>
+								<t t-esc="summery1.date"/>
+							</td>
+							<td>
+								<t t-esc="summery1.waiter"/>
+							</td>
+							<td>
+								<t t-esc="summery1.payment_method"/>
+							</td>
+							<td class="pos-center-align">
+								<t t-esc="env.pos.format_currency(summery1.credit)"/>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<table class='pos-center-align' style="margin-top: 10px;width: 100% !important;">
+					<colgroup>
+						<col width='50%' />
+						<col width='25%' />
+						<col width='25%' />
+					</colgroup>
+					<thead>
+						<tr style="border-bottom: 2px solid black;">
+							<th>Mesero</th>
+							<th>Total No. pedidos</th>
+							<th>Total propinas</th>
+						</tr>
+					</thead>
+					<tbody style="font-size:14px;">
+						<tr t-foreach="props.statement_data[3]" t-as="summery2" >
+							<td>
+								<t t-esc="summery2.waiter"/>
+							</td>
+							<td>
+								<t t-esc="summery2.orders_no"/>
+							</td>
+							<td>
+								<t t-esc="env.pos.format_currency(summery2.tips_total)"/>
+							</td>
+						</tr>
+						<tr>
+							<td><b> </b></td>
+							<td style="padding-top: 10px;"><b> Total:</b></td>
+							<td style="padding-top: 10px;" class="pos-center-align"><b><t t-esc="env.pos.format_currency(props.statement_data[2])"/></b></td>
+						</tr>
+					</tbody>
+				</table>
+
+				<br />
+				<br/>
+
+				<div style="margin-top:70px;text-align: center;">
+					<p style="border-top: 2px dashed black;"></p>
+					<b><span>Firma</span></b>
+				</div>
+			</div>
+					
+		</div>
+	</t>
+
+</templates>

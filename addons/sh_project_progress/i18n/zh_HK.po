@@ -1,0 +1,85 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sh_project_progress
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.1alpha1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-13 06:22+0000\n"
+"PO-Revision-Date: 2020-10-13 06:22+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sh_project_progress
+#: model:ir.model.fields,field_description:sh_project_progress.field_project_project__display_name
+#: model:ir.model.fields,field_description:sh_project_progress.field_project_task__display_name
+#: model:ir.model.fields,field_description:sh_project_progress.field_project_task_type__display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: sh_project_progress
+#: model:ir.model.fields,field_description:sh_project_progress.field_project_task_type__exclude
+msgid "Exclude From Progress Calculation"
+msgstr "从进度计算中排除"
+
+#. module: sh_project_progress
+#: model:ir.model.fields,field_description:sh_project_progress.field_project_project__id
+#: model:ir.model.fields,field_description:sh_project_progress.field_project_task__id
+#: model:ir.model.fields,field_description:sh_project_progress.field_project_task_type__id
+msgid "ID"
+msgstr "ID"
+
+#. module: sh_project_progress
+#: model:ir.model.fields,field_description:sh_project_progress.field_project_project____last_update
+#: model:ir.model.fields,field_description:sh_project_progress.field_project_task____last_update
+#: model:ir.model.fields,field_description:sh_project_progress.field_project_task_type____last_update
+msgid "Last Modified on"
+msgstr "最后修改了"
+
+#. module: sh_project_progress
+#: code:addons/sh_project_progress/models/project_progress.py:0
+#, python-format
+msgid "Progress must be 100% OR under 100%."
+msgstr "进展必须100％或以下100％。"
+
+#. module: sh_project_progress
+#: model:ir.model.fields,field_description:sh_project_progress.field_project_project__progress
+#: model:ir.model.fields,field_description:sh_project_progress.field_project_task__task_progress
+#: model:ir.model.fields,field_description:sh_project_progress.field_project_task_type__stage_progress
+msgid "Progress(%)"
+msgstr "进步（％）"
+
+#. module: sh_project_progress
+#: model_terms:ir.ui.view,arch_db:sh_project_progress.project_project_form_view_inherit
+msgid "Progress(%) :"
+msgstr "进步（％） ："
+
+#. module: sh_project_progress
+#: model:ir.model,name:sh_project_progress.model_project_project
+msgid "Project"
+msgstr "项目"
+
+#. module: sh_project_progress
+#: model:ir.model,name:sh_project_progress.model_project_task
+msgid "Task"
+msgstr "任务"
+
+#. module: sh_project_progress
+#: model:ir.model,name:sh_project_progress.model_project_task_type
+msgid "Task Stage"
+msgstr "任务阶段"
+
+#. module: sh_project_progress
+#: model:ir.model.fields,field_description:sh_project_progress.field_project_task__task_total
+msgid "Task total"
+msgstr "任务总计"
+
+#. module: sh_project_progress
+#: model:ir.model.fields,field_description:sh_project_progress.field_project_project__total
+msgid "Total"
+msgstr "全部的"

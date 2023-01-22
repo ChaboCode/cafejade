@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		<!--  Vista para salida de efectivo Out -->
+		<record id="view_pos_saveguard_tree_view" model="ir.ui.view">
+			<field name="name">pos.entrada.salida.tree.view</field>
+			<field name="model">pos.entrada.salida</field>
+			<field name="arch" type="xml">
+				<tree string="POS Cash In Out">
+					<field name="name"/>
+	           		<field name="reason"/>	
+	           		<field name="method_id" />
+					<field name="cash_type"/>
+					<field name="user_id"/>
+					<field name="session_id"/>
+					<field name="amount"/>
+					<field name="order_id" />				
+					<field name="create_date"/>	
+				</tree>
+			</field>
+		</record>
+
+
+		<record id="view_pos_saveguard_form_view" model="ir.ui.view">
+			<field name="name">pos.entrada.salida.form.view</field>
+			<field name="model">pos.entrada.salida</field>
+			<field name="arch" type="xml">
+				<form string="POS Cash In Out" version="9.0">
+					<sheet>
+						<group>
+							<group>
+								<field name="name"/>
+								<field name="cash_type"/>
+								<field name="amount"/>				
+								<field name="create_date"/>
+							</group>
+							<group>
+								<field name="user_id"/>
+								<field name="session_id"/>
+	           					<field name="reason"/>	
+	           					<field name="method_id" />
+								<field name="order_id" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_pos_saveguard">
+			<field name="name">Salidas o entradas en punto de venta</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">pos.entrada.salida</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<!--  Menu For POS Cash In Out -->
+		<menuitem 
+			id="menu_pos_saveguard" 
+			name="Entradas y salidas" 
+			parent="point_of_sale.menu_point_rep" 
+			action="action_pos_saveguard" 
+			sequence="10"/>
+
+		<record id="seq_cash_box_in_out" model="ir.sequence">
+			<field name="name">Entrada y salida de efectivo</field>
+			<field name="code">pos.entrada.salida</field>
+			<field name="prefix">Movimiento/</field>
+			<field name="padding">5</field>
+			<field name="company_id" eval="False" />
+		</record>
+		
+	</data>
+</odoo>

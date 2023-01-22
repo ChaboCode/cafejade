@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_reporte_diario_empleados,reporte.diario_empleados,model_reporte_diario_empleados,,1,1,1,1
+access_productos_faltantes,productos.faltantes,model_productos_faltantes,,1,1,1,1
+access_empledos_retardos,empledos.retardos,model_empledos_retardos,,1,1,1,1

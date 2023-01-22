@@ -1,0 +1,964 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* aspl_pos_kitchen_combo
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-26 00:15+0000\n"
+"PO-Revision-Date: 2022-08-26 00:15+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ComboScreen/Comboline.xml:0
+#, python-format
+msgid "(Required)"
+msgstr "(Requerido)"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ComboScreen/CombopadWidget.xml:0
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ComboScreen/CombopadWidget.xml:0
+#, python-format
+msgid "Add"
+msgstr "Agregar"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/js/Screens/SyncPosOrderScreen/SyncOrderScreen.js:0
+#, python-format
+msgid "Add Cancel Order Reason"
+msgstr "Añadir motivo de pedido cancelado"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/js/Screens/ProductScreen/Orderline.js:0
+#, python-format
+msgid "Add Reason"
+msgstr "Agregar motivo"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/js/Screens/SyncPosOrderScreen/SyncOrderScreen.js:0
+#, python-format
+msgid "All Orders"
+msgstr "Todas las Ódenes"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ComboScreen/CombopadWidget.xml:0
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/PaymentScreen/PaymentScreen.xml:0
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/SyncPosOrderScreen/SyncOrderScreen.xml:0
+#, python-format
+msgid "Back"
+msgstr "Atrás"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Popups/SplitCombolinePopup.xml:0
+#, python-format
+msgid "Backspace"
+msgstr "Retroceso"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_product_combo__base_price
+msgid "Base Price"
+msgstr "Precio base"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_pos_combo_line__bom_id
+msgid "Bom Id"
+msgstr "Id de creación"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_res_users__is_delete_order_line
+msgid "Can Delete Order Line"
+msgstr "Puede eliminar la línea de pedido"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Popups/ComboReplacePopup.xml:0
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Popups/MergeCombolinePopup.xml:0
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Popups/SplitCombolinePopup.xml:0
+#, python-format
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_pos_order__cancel_order_reason
+msgid "Cancel Reason"
+msgstr "Motivo de cancelación"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_product_combo__pos_category_id
+msgid "Categories"
+msgstr "Categorías"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_pos_combo_line__categoryId
+msgid "Category Id"
+msgstr "Id de Categoría"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_pos_combo_line__categoryName
+msgid "Category Name"
+msgstr "Nombre de Categoría"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Popups/ComboInfoPopup.xml:0
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ComboScreen/Comboline.xml:0
+#, python-format
+msgid "Close"
+msgstr ""
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/js/Chrome.js:0
+#, python-format
+msgid "Closing ..."
+msgstr ""
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ProductScreen/Orderline.xml:0
+#: model_terms:ir.ui.view,arch_db:aspl_pos_kitchen_combo.combo_product_template_only_form_view
+#, python-format
+msgid "Combo"
+msgstr "Combo"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Popups/ComboInfoPopup.xml:0
+#, python-format
+msgid "Combo Info"
+msgstr "Información de Combo"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_pos_order_line__combo_lines
+msgid "Combo Lines"
+msgstr "Lineas de Combo"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields.selection,name:aspl_pos_kitchen_combo.selection__pos_order__order_state__complete
+msgid "Complete"
+msgstr "Completo"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Popups/SplitCombolinePopup.xml:0
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ComboScreen/CombopadWidget.xml:0
+#, python-format
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields.selection,name:aspl_pos_kitchen_combo.selection__res_users__kitchen_screen_user__cook
+msgid "Cook"
+msgstr "Cocinar"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Popups/SplitCombolinePopup.xml:0
+#, python-format
+msgid "Copy"
+msgstr "Copiar"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_order_line_cancel_reason__create_uid
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_pos_combo_line__create_uid
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_product_combo__create_uid
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_remove_product_reason__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_order_line_cancel_reason__create_date
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_pos_combo_line__create_date
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_product_combo__create_date
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_remove_product_reason__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/js/Screens/SyncPosOrderScreen/SyncOrderScreen.js:0
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/SyncPosOrderScreen/SyncOrderScreen.xml:0
+#, python-format
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/SyncPosOrderScreen/SyncOrderlineDetails.xml:0
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/SyncPosOrderScreen/SyncOrderlineDetails.xml:0
+#, python-format
+msgid "Customer Note"
+msgstr "Cliente"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_pos_combo_line__customisePrice
+msgid "Customise Price"
+msgstr "Personalizar precio"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Popups/SplitCombolinePopup.xml:0
+#, python-format
+msgid "Default"
+msgstr "Por defecto"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,help:aspl_pos_kitchen_combo.field_pos_combo_line__product_uom_id
+msgid "Default unit of measure used for all stock operations."
+msgstr "
+Unidad de medida por defecto utilizada para todas las operaciones de stock."
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields.selection,name:aspl_pos_kitchen_combo.selection__pos_order__order_state__deliver
+msgid "Deliver"
+msgstr "Entregar"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields.selection,name:aspl_pos_kitchen_combo.selection__pos_order_line__state__delivering
+msgid "Delivering"
+msgstr "Entregando"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_remove_product_reason__description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ComboScreen/CombopadWidget.xml:0
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ComboScreen/CombopadWidget.xml:0
+#, python-format
+msgid "Discard"
+msgstr "Desechar"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_order_line_cancel_reason__display_name
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_pos_combo_line__display_name
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_product_combo__display_name
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_remove_product_reason__display_name
+msgid "Display Name"
+msgstr "Nombre para mostrar"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/KitchenScreen/OrderCardLine.xml:0
+#: model:ir.model.fields.selection,name:aspl_pos_kitchen_combo.selection__pos_order__order_state__done
+#: model:ir.model.fields.selection,name:aspl_pos_kitchen_combo.selection__pos_order_line__state__done
+#, python-format
+msgid "Done"
+msgstr "Hecho"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ComboScreen/ComboSummery.xml:0
+#, python-format
+msgid "Extra:"
+msgstr "Extra:"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields.selection,name:aspl_pos_kitchen_combo.selection__pos_config__restaurant_mode__quick_service
+msgid "Fast-Food/Quick Service Restaurant (QSR)"
+msgstr "Restaurante de comida rápida/se envía a pantalla después del pago (QSR)"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/js/Screens/SyncPosOrderScreen/SyncOrderScreen.js:0
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/SyncPosOrderScreen/SyncOrderScreen.xml:0
+#, python-format
+msgid "Floor"
+msgstr "Piso"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/KitchenScreen/OrderLinePrint.xml:0
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/KitchenScreen/OrderPrint.xml:0
+#, python-format
+msgid "Floor:"
+msgstr "Piso:"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_pos_combo_line__full_product_name
+msgid "Full Product Name"
+msgstr "Nombre completo del producto"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields.selection,name:aspl_pos_kitchen_combo.selection__pos_config__restaurant_mode__full_service
+msgid "Full Service Restaurant (FCS)"
+msgstr "
+Restaurante de servicio completo/ se envía a pantalla con botón (FCS)"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/KitchenScreen/OrderCard.xml:0
+#, python-format
+msgid "Guests :"
+msgstr "Comensal :"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_order_line_cancel_reason__id
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_pos_combo_line__id
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_product_combo__id
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_remove_product_reason__id
+msgid "ID"
+msgstr "ID"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_product_product__is_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_product_template__is_combo
+msgid "Is Combo"
+msgstr "Is Combo"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_pos_order_line__is_combo_line
+msgid "Is Combo Line"
+msgstr "Es linea de Combo"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_pos_combo_line__is_replaced
+msgid "Is Replaced"
+msgstr "Es reemplazo"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_pos_combo_line__require
+msgid "Is Require"
+msgstr "Es requerido"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_pos_combo_line__replaceable
+msgid "Is replaceable"
+msgstr "Es reemplazable"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Chrome.xml:0
+#, python-format
+msgid "KITCHEN"
+msgstr "Cocína"
+
+#. module: aspl_pos_kitchen_combo
+#: model_terms:ir.ui.view,arch_db:aspl_pos_kitchen_combo.aspl_pos_kitchen_combo_pos_config
+msgid "Kitchen Screen"
+msgstr "Pantalla de Cocina"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_res_users__kitchen_screen_user
+msgid "Kitchen Screen User"
+msgstr "Usuario de pantalla de cocina"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_order_line_cancel_reason____last_update
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_pos_combo_line____last_update
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_product_combo____last_update
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_remove_product_reason____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_order_line_cancel_reason__write_uid
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_pos_combo_line__write_uid
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_product_combo__write_uid
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_remove_product_reason__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_order_line_cancel_reason__write_date
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_pos_combo_line__write_date
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_product_combo__write_date
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_remove_product_reason__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización en"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_pos_order__line_cancel_reason_ids
+msgid "Line Cancel Reason"
+msgstr "Motivo de cancelación de línea"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_pos_order_line__line_cid
+msgid "Line cid"
+msgstr ""
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Chrome.xml:0
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Chrome.xml:0
+#, python-format
+msgid "Logo"
+msgstr ""
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/js/Screens/ProductScreen/ProductScreen.js:0
+#, python-format
+msgid "Lot/Serial Number(s) Required"
+msgstr "Número(s) de lote/serie requerido(s)"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields.selection,name:aspl_pos_kitchen_combo.selection__res_users__kitchen_screen_user__manager
+msgid "Manager"
+msgstr "Gerente"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_pos_combo_line__mo_id
+msgid "Manufacture Order Id"
+msgstr "ID de pedido de fabricación"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_pos_combo_line__max
+msgid "Max Quantity"
+msgstr "Cantidad máxima"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Popups/MergeCombolinePopup.xml:0
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Popups/MergeCombolinePopup.xml:0
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ComboScreen/CombopadWidget.xml:0
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ComboScreen/CombopadWidget.xml:0
+#, python-format
+msgid "Merge"
+msgstr "Unir"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ComboScreen/CombopadWidget.xml:0
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ComboScreen/CombopadWidget.xml:0
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ComboScreen/CombopadWidget.xml:0
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ComboScreen/CombopadWidget.xml:0
+#, python-format
+msgid "Minus"
+msgstr "Menos"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_remove_product_reason__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ComboScreen/ComboWidget.xml:0
+#, python-format
+msgid "No product available"
+msgstr "Ningún producto disponible"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_product_combo__no_of_items
+msgid "No. of Items"
+msgstr "Nº de artículos"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/SyncPosOrderScreen/SyncOrderScreen.xml:0
+#, python-format
+msgid "Not Select"
+msgstr "No seleccionar"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/KitchenScreen/OrderCardLine.xml:0
+#, python-format
+msgid "Note :"
+msgstr "Nota :"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/SyncPosOrderScreen/SyncOrderScreen.xml:0
+#, python-format
+msgid "Order Date"
+msgstr "Fecha de orden"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/js/Screens/SyncPosOrderScreen/SyncOrderScreen.js:0
+#, python-format
+msgid "Order Date(YYYY-MM-DD hh:mm A)"
+msgstr "Fecha de pedido (AAAA-MM-DD hh:mm A)"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_order_line_cancel_reason__pos_order_id
+msgid "Order Line"
+msgstr "Linea de pedido"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model,name:aspl_pos_kitchen_combo.model_order_line_cancel_reason
+msgid "Order Line Cancel Reason"
+msgstr "Motivo de cancelación de la línea de pedido"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_pos_combo_line__order_line_id
+msgid "Order Line Ref"
+msgstr "Referencia de línea de pedido"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/js/Screens/ProductScreen/ControlButtons/SendToKitchenButton.js:0
+#, python-format
+msgid "Order Not Send, Please check your network connection!"
+msgstr "Pedido no enviado, ¡compruebe su conexión de red!"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_pos_order__order_state
+msgid "Order State"
+msgstr "Estado de la Orden"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/SyncPosOrderScreen/SyncOrderScreen.xml:0
+#, python-format
+msgid "Order Taken By"
+msgstr "Orden tomada por"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/SyncPosOrderScreen/SyncOrderDetails.xml:0
+#, python-format
+msgid "Order is empty"
+msgstr "El pedido está vacío"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_res_users__pos_category_ids
+msgid "POS Categories"
+msgstr "Categorías de punto de venta"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_res_users__default_pos
+msgid "POS Config"
+msgstr "Configuración de TPV"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ComboScreen/CombopadWidget.xml:0
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ComboScreen/CombopadWidget.xml:0
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ComboScreen/CombopadWidget.xml:0
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ComboScreen/CombopadWidget.xml:0
+#, python-format
+msgid "Plus"
+msgstr "Más"
+
+#. module: aspl_pos_kitchen_combo
+#: model_terms:ir.ui.view,arch_db:aspl_pos_kitchen_combo.aspl_sale_note_res_users_form_view_ace
+msgid "Point of Sale"
+msgstr "Punto de venta"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model,name:aspl_pos_kitchen_combo.model_pos_combo_line
+msgid "Point of Sale Combo Lines"
+msgstr "Líneas de Combo de punto de venta"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model,name:aspl_pos_kitchen_combo.model_pos_config
+msgid "Point of Sale Configuration"
+msgstr "Configuración del PdV"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model,name:aspl_pos_kitchen_combo.model_pos_order_line
+msgid "Point of Sale Order Lines"
+msgstr "Líneas de comanda del punto de venta"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model,name:aspl_pos_kitchen_combo.model_pos_order
+msgid "Point of Sale Orders"
+msgstr "Pedidos del PdV"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields.selection,name:aspl_pos_kitchen_combo.selection__pos_order_line__state__preparing
+msgid "Preparing"
+msgstr "Preparando"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ComboScreen/ComboSummery.xml:0
+#, python-format
+msgid "Price:"
+msgstr "Precio"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model,name:aspl_pos_kitchen_combo.model_product_product
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_order_line_cancel_reason__product_id
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_pos_combo_line__product_id
+msgid "Product"
+msgstr "Producto"
+
+#. module: aspl_pos_kitchen_combo
+#: model_terms:ir.ui.view,arch_db:aspl_pos_kitchen_combo.view_pos_pos_form_inh
+msgid "Product Cancel Reason"
+msgstr "Motivo de cancelación del producto"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model,name:aspl_pos_kitchen_combo.model_product_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_product_product__product_combo_ids
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_product_template__product_combo_ids
+msgid "Product Combo"
+msgstr "Producto Combo"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model,name:aspl_pos_kitchen_combo.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_product_combo__product_tmpl_id
+msgid "Product Tmpl"
+msgstr "Plantilla de producto"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_pos_combo_line__product_uom_id
+msgid "Product UoM"
+msgstr "Unidad de medida de producto"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_product_combo__product_ids
+msgid "Products"
+msgstr "Productos"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_pos_combo_line__qty
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_pos_order_line__quantityLine
+msgid "Quantity Line of category"
+msgstr ""
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ReceiptScreen/OrderReceipt.xml:0
+#, python-format
+msgid "REPLACE:"
+msgstr "REEMPLAZAR:"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_order_line_cancel_reason__reason
+msgid "Reason"
+msgstr "Razón"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_res_users__delete_order_line_reason
+msgid "Reason For Delete Order Line"
+msgstr "Motivo de la eliminación de la línea de pedido"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/js/Screens/SyncPosOrderScreen/SyncOrderScreen.js:0
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/SyncPosOrderScreen/SyncOrderScreen.xml:0
+#, python-format
+msgid "Receipt/Ref"
+msgstr "Recibo/Referencia"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/SyncPosOrderScreen/SyncOrderlineDetails.xml:0
+#, python-format
+msgid "Refunded"
+msgstr "Reintegrado"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/js/Screens/SyncPosOrderScreen/SyncOrderlineDetails.js:0
+#, python-format
+msgid "Refunding %s in "
+msgstr "% de Reembolso en"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/js/Screens/PaymentScreen/PaymentScreen.js:0
+#, python-format
+msgid "Remove Order"
+msgstr "Eliminar pedido"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.actions.act_window,name:aspl_pos_kitchen_combo.action_remove_product_reason
+#: model:ir.model,name:aspl_pos_kitchen_combo.model_remove_product_reason
+#: model:ir.ui.menu,name:aspl_pos_kitchen_combo.menu_remove_product_reason
+msgid "Remove Product Reason"
+msgstr "Razón para eliminar el producto"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Popups/ComboReplacePopup.xml:0
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ComboScreen/Comboline.xml:0
+#, python-format
+msgid "Replace"
+msgstr "Reemplazar"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_pos_combo_line__replacePrice
+msgid "Replace Price"
+msgstr "Reemplazar precio"
+
+#. module: aspl_pos_kitchen_combo
+#: model_terms:ir.ui.view,arch_db:aspl_pos_kitchen_combo.combo_product_template_only_form_view
+msgid "Replace Product"
+msgstr "Reemplazar Producto"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_product_combo__replaceable
+msgid "Replaceable"
+msgstr "Reemplazable"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_pos_combo_line__replaced_product_id
+msgid "Replaced Product"
+msgstr "Producto reemplazado"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_product_combo__require
+msgid "Required"
+msgstr "Requerido"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ComboScreen/Comboline.xml:0
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ComboScreen/CombopadWidget.xml:0
+#, python-format
+msgid "Reset"
+msgstr "Reiniciar"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_pos_config__restaurant_mode
+#: model_terms:ir.ui.view,arch_db:aspl_pos_kitchen_combo.aspl_pos_kitchen_combo_pos_config
+msgid "Restaurant Mode"
+msgstr "Modo Restaurante"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ComboScreen/CombopadWidget.xml:0
+#, python-format
+msgid "Save"
+msgstr "Guardar"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ComboScreen/CombopadWidget.xml:0
+#, python-format
+msgid "Saved"
+msgstr "Guardado"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/js/Screens/ProductScreen/Orderline.js:0
+#, python-format
+msgid "Select Reason"
+msgstr "Selecciona Motivo"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/SyncPosOrderScreen/SyncOrderDetails.xml:0
+#, python-format
+msgid "Select an order"
+msgstr "Seleccione un pedido"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/SyncPosOrderScreen/SyncOrderDetails.xml:0
+#, python-format
+msgid "Select the product(s) to refund and set the quantity"
+msgstr "Seleccione los productos a reembolsar y establezca la cantidad"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_pos_order__send_to_kitchen
+msgid "Send to Kitchen"
+msgstr "Producir"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ProductScreen/ControlButtons/SendToKitchenButton.xml:0
+#, python-format
+msgid "Send to kitchen"
+msgstr "Producir"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ComboScreen/ComboWidget.xml:0
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ComboScreen/ComboWidget.xml:0
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/SyncPosOrderScreen/SyncOrderDetails.xml:0
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/SyncPosOrderScreen/SyncOrderDetails.xml:0
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/SyncPosOrderScreen/SyncOrderDetails.xml:0
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/SyncPosOrderScreen/SyncOrderDetails.xml:0
+#, python-format
+msgid "Shopping cart"
+msgstr "Carrito de compras"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ComboScreen/CombopadWidget.xml:0
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ComboScreen/CombopadWidget.xml:0
+#, python-format
+msgid "Split"
+msgstr "Separar"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Popups/SplitCombolinePopup.xml:0
+#, python-format
+msgid "Split -"
+msgstr "Separar"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/KitchenScreen/OrderCardLine.xml:0
+#: model:ir.model.fields.selection,name:aspl_pos_kitchen_combo.selection__pos_order__order_state__start
+#, python-format
+msgid "Start"
+msgstr "Inicio"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_pos_order_line__state
+msgid "State"
+msgstr "Estado"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/js/Screens/SyncPosOrderScreen/SyncOrderScreen.js:0
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/SyncPosOrderScreen/SyncOrderScreen.xml:0
+#, python-format
+msgid "Table"
+msgstr "Mesa"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/KitchenScreen/OrderCard.xml:0
+#, python-format
+msgid "Table :"
+msgstr "Mesa :"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/KitchenScreen/OrderLinePrint.xml:0
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/KitchenScreen/OrderPrint.xml:0
+#, python-format
+msgid "Table:"
+msgstr "Mesa"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/SyncPosOrderScreen/SyncOrderDetails.xml:0
+#, python-format
+msgid "Taxes:"
+msgstr "Impuestos:"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ComboScreen/ComboProductList.xml:0
+#, python-format
+msgid "There are no products in this category."
+msgstr "No hay productos en esta categoría."
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/js/Screens/SyncPosOrderScreen/SyncOrderlineDetails.js:0
+#, python-format
+msgid "To Refund: %s"
+msgstr "% a Reembolsar"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/SyncPosOrderScreen/SyncOrderScreen.xml:0
+#, python-format
+msgid "Total"
+msgstr "Total"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ComboScreen/ComboSummery.xml:0
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/SyncPosOrderScreen/SyncOrderDetails.xml:0
+#, python-format
+msgid "Total:"
+msgstr "Total"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_pos_combo_line__price
+msgid "Unit Price"
+msgstr "Precio unitario"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_pos_order_line__useQuantityLine
+msgid "Use quantity Line Of Product"
+msgstr "Cantidad a usar en Linea de Producto"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model,name:aspl_pos_kitchen_combo.model_res_users
+msgid "Users"
+msgstr "Usuarios"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ProductScreen/Orderline.xml:0
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ProductScreen/Orderline.xml:0
+#, python-format
+msgid "Valid product lot"
+msgstr "Lote de producto válido"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields.selection,name:aspl_pos_kitchen_combo.selection__res_users__kitchen_screen_user__waiter
+msgid "Waiter"
+msgstr "Mesero"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields.selection,name:aspl_pos_kitchen_combo.selection__pos_order_line__state__waiting
+msgid "Waiting"
+msgstr "Esperando"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/js/Screens/SyncPosOrderScreen/SyncOrderScreen.js:0
+#, python-format
+msgid ""
+"Would you like to ${type == 'cancel-order' ? 'cancel' : 'delete'} selected "
+"order?"
+msgstr ""
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/js/Screens/PaymentScreen/PaymentScreen.js:0
+#, python-format
+msgid "Would you like to remove current order?"
+msgstr "¿Desea eliminar el pedido actual?"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/js/Screens/ProductScreen/ControlButtons/SendToKitchenButton.js:0
+#, python-format
+msgid "You can not send 0 quantity product to kitchen!"
+msgstr "¡No puedes enviar 0 cantidad de producto a la cocina!"
+
+#. module: aspl_pos_kitchen_combo
+#: model:ir.model.fields,field_description:aspl_pos_kitchen_combo.field_order_line_cancel_reason__description
+msgid "description"
+msgstr "Descripción"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/ChromeWidgets/KitchenScreenButton.xml:0
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/ChromeWidgets/KitchenScreenButton.xml:0
+#, python-format
+msgid "screen"
+msgstr "Pantalla"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ProductScreen/ControlButtons/SendToKitchenButton.xml:0
+#, python-format
+msgid "send-to-kitchen"
+msgstr "Enviar a Producir"
+
+#. module: aspl_pos_kitchen_combo
+#. openerp-web
+#: code:addons/aspl_pos_kitchen_combo/static/src/xml/Screens/ReceiptScreen/OrderReceipt.xml:0
+#, python-format
+msgid "with"
+msgstr "Con"

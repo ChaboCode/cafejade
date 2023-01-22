@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+	<record
+		id="res_users_form_view_ogum" model="ir.ui.view">
+		<field name="name">res.users.form</field>
+		<field name="model">res.users</field>
+		<field name="inherit_id" ref="aspl_pos_kitchen_combo.aspl_sale_note_res_users_form_view_ace" />
+		<field name="arch" type="xml">
+			<field name="kitchen_screen_user" position="after" >
+                <field name="genera_salvaguarda" />
+                <field name="ingresa_propinas" />
+            </field>
+
+			</field>
+	</record>
+
+</odoo>
+

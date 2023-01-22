@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+<t t-name="ReasingWaiterPopup" owl="1">
+		<div role="dialog" class="modal-dialog">
+			<Draggable>
+				<div class="popup">
+					<header class="title drag-handle">
+						Reasignación de mesero
+					</header>
+					<main class="body" style="font-family: 'Lato-Reg';">
+						<table >
+							<tr>
+								<td width="24">Nuevo mesero:</td>
+								<td width="10"></td>
+								<td width="66">
+									<select id="waiter" class="method-selection">
+										<option value='0'>Seleccione:</option><span>&#160;</span>
+
+										<t t-foreach="get_data_waiters.data_waiters" t-as="metodo" t-key="metodo">
+												<option t-att-value='metodo.id'> 
+												<t t-esc='metodo.name'/>
+											</option>
+										</t>
+										
+									</select>
+									
+								</td>
+							</tr>
+							<br/>
+						</table>
+
+						<table>
+						<tr>
+
+						<td width="40">Motivo reasignación:</td>
+						<td width="10"></td>
+						<td width="50"><textarea rows="3" required="required"  id ="reason" type="text" class="input-field" name="name" style="height: 60px; width: 600%;"></textarea></td>
+							</tr>
+						</table>
+                    </main>
+					<footer class="footer">
+					<div class="button cancel" t-on-click="cancelar()">Cancelar</div>
+					<div class="button" t-on-click="ingresar_mesero()">Asignar mesero</div>
+					
+				</footer>
+				</div>
+			</Draggable>
+		</div>
+	</t>
+
+</templates>

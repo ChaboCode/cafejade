@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="FloorScreen2" t-inherit="pos_restaurant.FloorScreen" t-inherit-mode="extension" owl="1">
+        <xpath expr="//span[hasclass('edit-button')]" position="after">
+            <span t-if="env.pos.user.role == 'manager'" class="edit-table-button editing" t-att-class="{ active: state.isEditMode2 }" t-on-click.stop="toggleSplitMerge">
+                <i class='fa fa-delicious'></i>
+            </span>
+            <EditBar2 t-if="state.isEditMode2" selectedTable="selectedTable" />
+        </xpath>
+        <xpath expr="//div[hasclass('tables')]" position="replace">
+            <div t-else="" class="tables">
+                <t t-foreach="activeTables" t-as="table" t-key="table.id">
+                    <t t-if="state.selectedTableId">
+                        <TableWidget t-if="check_table(table.id)" table="table" />
+                        <EditableTable t-else="" table="table" />
+                    </t>
+                    <t t-else="">
+                        <TableWidget t-if="table.id !== state.selectedTableId" table="table" />
+                        <EditableTable t-else="" table="table" />
+                    </t>
+                </t>
+            </div>
+        </xpath>
+    </t>
+    <t t-name="EditBar2" owl="1">
+        <div class='edit-merge-split-bar'>
+            <span class='edit-table-button' style="top: 33px;left: -80px;" t-on-click.stop="trigger('merge-table')">
+                <i class='fa fa-plus-circle'></i>
+            </span>
+            <span class='edit-table-button' style="top: 33px;left: -39px;" t-on-click.stop="trigger('split-table')">
+                <i class='fa fa-minus-circle'></i>
+            </span>
+        </div>
+    </t>
+    <t t-name="TableWidget2" t-inherit="pos_restaurant.TableWidget" t-inherit-mode="extension" owl="1">
+        <xpath expr="//span[hasclass('label')]" position="replace">
+            <span class="label">
+                <t t-if="props.table.t_name">
+                    <t t-esc="props.table.t_name" />
+                </t>
+                <t t-else="">
+                    <t t-esc="props.table.name" />
+                </t>
+            </span>
+        </xpath>
+    </t>
+    <t t-name="EditableTable2" t-inherit="pos_restaurant.EditableTable" t-inherit-mode="extension" owl="1">
+        <xpath expr="//span[hasclass('label')]" position="replace">
+            <span class="label">
+                <t t-if="props.table.t_name">
+                    <t t-esc="props.table.t_name" />
+                </t>
+                <t t-else="">
+                    <t t-esc="props.table.name" />
+                </t>
+            </span>
+        </xpath>
+    </t>
+</templates>

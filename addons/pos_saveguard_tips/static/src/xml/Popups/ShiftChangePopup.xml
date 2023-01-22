@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+<t t-name="ShiftChangePopupLT" owl="1">
+		<div role="dialog" class="modal-dialog">
+			<Draggable>
+				<div class="popup">
+					<header class="title drag-handle">
+						Cambio de turno
+					</header>
+					<main class="body" style="font-family: 'Lato-Reg';">
+						
+						<span width="24">Meseros:</span>
+						<br/>
+							<table id="waiters">
+								 <thead>
+                            <tr>
+                            	<th class="th_hide">ID</th>
+                                <th class="th_ba">Mesero actual</th>
+                                <th class="th_ba">Nuevo Mesero</th>
+                            </tr>
+                        	</thead>
+										<t t-foreach="get_data_waiters_in_orders.data_waiters_in_orders" t-as="waiter_in_order" t-key="waiter_in_order">
+											<tr>
+												<td class="th_hide">
+													<t t-esc='waiter_in_order.id'/>
+												</td>
+												<td>
+													<t t-esc='waiter_in_order.name'/>
+												</td>
+											<td>
+
+												<select  class="method-selection">
+													<option value='0'>Seleccione:</option><span>&#160;</span>
+
+													<t t-foreach="get_data_waiters_in_orders.data_waiters" t-as="waiter" t-key="waiter">
+															<option t-att-value='waiter.id'> 
+															<t t-esc='waiter.name'/>
+														</option>
+													</t>
+												</select>
+
+											</td>
+											</tr>
+										</t>
+							
+						</table>
+                    </main>
+					 <footer class="footer">
+	                    <div class="button cancel" t-on-click="cancelar()">Cancelar</div>
+	                    <div class="button" t-on-click="cambio_turno()">Procesar cambio de turno</div>
+	                </footer>
+				</div>
+			</Draggable>
+		</div>
+	</t>
+
+</templates>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+	 <t t-name="waitlistScreen" owl="1">
+	 	<div class="clientlist-screen screen">
+	 		<div class="screen-content">		
+
+	 			 <div class="top-content">
+                  <!--  <div class="button back" t-on-click="back">
+                       Back
+                   </div> -->
+                   <div class="button" t-on-click="onClickCreate">
+                       Crear
+                   </div>                                   
+               </div>
+               <!-- <div class="controls">
+                    <div class="buttons">
+                        <button class="discard" t-on-click="trigger('close-order-screen')">Back</button>
+                    </div>
+                </div> -->
+
+               <section class="full-content">
+               	 <div class="client-window">
+               	 	<section class="subwindow list">
+               	 		<div class="subwindow-container">
+               	 			 <div class="subwindow-container-fix scrollable-y">
+               	 			 	<table class="client-list">
+               	 			 		<thead>
+                                        <tr>
+                                          <th>Cliente </th>
+                                          <th>Teléfono</th>
+                                          <th>No. clientes</th>
+                                          <th>Tiempo espera</th>
+                                          <th>Mesa Sugerida</th>
+                                          <th>Mesa Asignada</th>
+                                          <!--<th>Estado</th-->
+                                          <th></th>
+                                          <th></th>
+                                          <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                          <t t-foreach="list_wait" t-as="lisw" t-key="lisw.id">
+                                            <tr>
+                                             <td><t t-esc="lisw.cliente_id"/></td>
+                                             <td><t t-esc="lisw.telefono"/></td>
+                                             <td><t t-esc="lisw.no_clientes"/></td>
+                                             <td><t t-esc="lisw.tiempo_espera"/></td>
+                                             <td>
+                                             <textarea class="detail" name="mesa_sugerida"
+                                                  t-on-change="capturemesasugerida" 
+                                                  placeholder="Mesa sugerida" 
+                                                  t-att-value="lisw.mesa_sugerida_id || ''">
+                                              </textarea>
+                                             </td>            	
+                                             <td>
+                                                <input class="detail" name="mesa_asignada"
+                                                  t-on-change="capture_asig" 
+                                                  placeholder="Mesa asignada" 
+                                                  t-att-value="lisw.mesa_asignada_ids || ''" />                                                                                    
+                                             </td>
+                                             <!--<td><t t-esc="lisw.status"/></td>-->
+                                             <td>
+                                             	<div class="fa fa-cutlery" 
+                                                    t-on-click="spend">               
+							                   </div>                                             	
+                                             	 
+                                             </td>
+                                             <td>
+                                             	<div class="fa fa-check-circle-o" t-on-click="assign">
+							                     
+							                   </div>                                             
+                                             </td>
+                                              <td>
+                                                <div class="fa fa-times" t-on-click="cancel">       
+                                               </div>                                             
+                                             </td>
+
+                                            </tr>
+                                          </t>
+                                    </tbody>
+                                   
+               	 			 	</table> 	
+               	 			 </div> 
+               	 		</div>  
+               	 	</section>
+               	 </div>
+               </section>
+
+	 		</div> 
+	 	</div>
+	 </t>
+</templates>

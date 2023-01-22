@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_pos_pos_form_inh" model="ir.ui.view">
+        <field name="name">pos.order.form.view</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="before">
+                <field name="order_state"/>
+                <field name="send_to_kitchen"/>
+            </xpath>
+            <field name="company_id" position="after">
+                <field name="cancel_order_reason" readonly="1"/>
+            </field>
+            <xpath expr="//page[@name='products']" position='after'>
+                <page string='Product Cancel Reason' name="product_cancel_reason">
+                    <field name="line_cancel_reason_ids">
+                        <tree editable="bottom">
+                            <field name="product_id"/>
+                            <field name="reason"/>
+                            <field name="description"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+    <record id="point_of_sale.action_pos_config_kanban" model="ir.actions.act_window">
+            <field name="context">{'from_pos': True}</field>
+        </record>
+
+</odoo>

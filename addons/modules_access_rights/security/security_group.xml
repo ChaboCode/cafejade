@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="configure_models_access" model="res.groups">
+            <field name="name">Configure Models Access</field>
+        </record>
+
+    </data>
+</odoo>

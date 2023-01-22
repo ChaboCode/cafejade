@@ -1,0 +1,306 @@
+body{
+    // background-color: #533420 !important;
+    background-color: #301b0f !important;
+}
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #7f532e #dcdbdb;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #dcdbdb;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #7f532e;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+  }
+
+.btn-primary{
+    background-color: #618d23 !important;
+    border-style: none;
+}
+
+.btn-secondary{
+    background-color: #5e7e32 !important;
+    border-style: none;
+}
+
+.dropdown-header{
+    background-color: #618d23 !important;
+    color: #f2f2f2 !important;
+    font-weight: normal !important;
+}
+
+// Nav
+.o_main_navbar{
+    width: 98%;
+    margin: auto;
+    margin-top: 12px !important;
+    margin-bottom: 12px !important;
+    border-radius: 0px;
+    background: #442a19;
+    box-shadow:  5px 5px 4px #3d2617,
+                 -5px -5px 4px #694229;
+    border-style: none;
+    border: 1px solid #79b12c !important;
+    .o-dropdown--no-caret, .o_nav_entry{
+        border-bottom: 4px solid #7ab12c00;
+        &:hover{
+            background-color: #79b12c !important;
+            border-bottom: 4px solid #618d23;
+        }
+    }
+}
+.mk_apps_sidebar_panel *{
+    transition: all 0.1s ease !important;
+}
+
+.mk_apps_sidebar_panel{
+    height: 580px !important;
+    z-index: 100 !important;
+    margin-top: 2%!important;
+    border-radius: 0px;
+    background: #442a19;
+    box-shadow:  5px 5px 4px #3d2617,
+                 -5px -5px 4px #694229;
+    border: 1px solid #d9a003 !important;
+    border-radius: 8px;
+    .mk_apps_sidebar_menu{
+        .nav-item{
+            .nav-link{
+                border-left: 4px solid #7ab12c00 !important;
+                &:hover{
+                    background-color: #79b12c !important;
+                    border-left: 4px solid #79b12c !important;
+                    -webkit-box-shadow: 0px 0px 4px 0px #79B12C; 
+                    box-shadow: 0px 0px 4px 0px #79B12C;
+                }
+            }
+        }
+    }
+}
+
+// Body
+.o_action_manager{
+    width: 96%;
+    margin: auto;
+    background: none !important;
+}
+
+// Controller
+.o_view_controller{
+    transition: all 0.1s ease !important;
+    .o_cp_bottom_right{
+        .o-dropdown{
+            .dropdown-toggle{
+                color: #f2f2f2 !important;
+            }
+        }
+        .o_switch_view{
+            border-radius: 0px;
+            background: #643e25 !important;
+            border-style: none !important;
+            &:hover{
+                background-color: #301b0f !important;
+            }
+            &::before{
+                color: #f2f2f2 !important;
+            }
+        }
+        .active{
+            box-shadow: inset 5px 5px 5px #5a3821,
+            inset -5px -5px 5px #6e4429
+        }
+        .o_pager_previous, .o_pager_next{
+            border-radius: 9px;
+            background: #643e25;
+            border-style: none !important;
+            &:hover{
+                background-color: #301b0f !important;
+            }
+            &::before{
+                color: #f2f2f2 !important;
+            }
+        }
+        .o_pager_counter{
+            color: #f2f2f2 !important;
+        }
+        .o_search_options{
+            button{
+                border-radius: 0px;
+                background: #643e25;
+                border-style: none !important;
+                &:hover{
+                    background-color: #301b0f !important;
+                }
+                i, span{
+                    color: #f2f2f2 !important;
+                }
+            }
+        }
+    }
+    .o_control_panel, .breadcrumb, .o_cp_searchview{
+        background-color: #442a19 !important;
+        border-style: none;
+        margin-bottom: 12px !important;
+        .breadcrumb{
+            span{
+                color: #f2f2f2 !important;
+            }
+        }
+        .o_searchview{
+            background: none;
+            border-style: none !important;
+            .o_searchview_input{
+                padding: 5px !important;
+                border-radius: 25px;
+                color: #f2f2f2;
+                background-color: #684a37 !important;
+            }
+            .o_facet_values{
+                padding: 5px !important;
+                background-color: #618d23;
+                color: #f2f2f2 !important;
+            }
+            .o_searchview_facet_label{
+                background-color: #26380d !important;
+            }
+        }
+    }
+    .o_control_panel{
+        box-shadow:  5px 5px 4px #3d2617,
+                 -5px -5px 4px #694229 !important;
+    }
+}
+
+// Apps
+.o_controller_with_searchpanel{
+    .o_search_panel_section_header, i{
+        color: #f2f2f2 !important;
+    }
+    .o_search_panel{
+        background: #442a19;
+        box-shadow:  5px 5px 4px #3d2617,
+                 -5px -5px 4px #694229;
+        border: 1px solid #d9a003 !important;
+        .o_search_panel_field{
+            .o_search_panel_category_value {
+                background: none !important;
+                b, span{
+                    color: #f2f2f2 !important;
+                }
+                &:hover{
+                    b, span{
+                        color: #2f2f2f !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Kanban
+.o_kanban_view.o_kanban_dashboard .o_kanban_record .o_kanban_card_header_title .o_primary, .o_kanban_view.o_kanban_dashboard .o_kanban_record .o_kanban_primary_left .o_primary > span:first-child, .o_kanban_view.o_kanban_dashboard .o_kanban_record .oe_kanban_content > .o_title > h3{
+    color: #f2f2f2 !important;
+}
+.o_kanban_record{
+    background: #442a19 !important;
+        box-shadow:  5px 5px 4px #3d2617,
+                 -5px -5px 4px #694229 !important;
+        border: 1px solid #d9a003 !important;
+    border-radius: 8px !important;
+    strong, span{
+        color: #f2f2f2 !important;
+    }
+}
+
+.o_kanban_view{
+    background: none !important;
+    span, b{
+        color: #f2f2f2 !important;
+    }
+}
+
+// List
+.o_list_view{
+    width: 90% !important;
+    margin: auto !important;
+    table{
+        thead{
+            tr{
+                th{
+                    background-color: #618d23 !important;
+                    color: #f2f2f2 !important;
+                    font-weight: normal;
+                    padding-top: 12px !important;
+                    padding-bottom: 12px !important;
+                    &:hover{
+                        background-color: #5e7e32 !important;
+                    }
+                }
+            }
+        }
+        tbody{
+            tr:nth-child(even){
+                background-color: rgb(240, 240, 240) !important;
+            }
+            tr{
+                &:hover{
+                    background-color: #5e7e32 !important;
+                    color: #f2f2f2 !important;
+                }
+            }
+        }
+    }
+}
+
+// Formulario
+.o_form_sheet_bg, .o_form_statusbar{
+    background: #301b0f !important;
+    border-style: none !important;
+    margin-top: 18px !important;
+    margin-bottom: 18px !important;
+    .o_form_sheet{
+        background-color: #f1ece9 !important;
+        border-radius: 12px !important;
+        margin-bottom: 25px !important;
+        box-shadow:  5px 5px 4px #3d2617,
+        -5px -5px 4px #694229 !important;
+        input{
+            border-radius: 25px !important;
+        }
+        .o_required_modifier{
+            input{
+                background-color: #cde6ae !important;
+                color: #f2f2f2 !important;
+                border-style: none !important;
+            }
+        }
+    }
+}
+
+// Conversaciones
+.o_widget_Discuss{
+    width: 98% !important;
+    height: 400px !important;
+    margin-top: 18px !important;
+    margin-bottom: 12px !important;
+    margin: auto;
+    border-radius: 18px 18px 18px 18px !important;
+    .o_DiscussSidebar{
+        border-radius: 25px 0 0 25px !important;
+    }
+    .o_Discuss_content{
+        border-radius: 0 25px 25px 0 !important;
+    }
+}

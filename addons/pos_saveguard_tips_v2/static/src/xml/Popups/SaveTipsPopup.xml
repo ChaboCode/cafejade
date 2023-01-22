@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+<t t-name="SaveTipsPopup" owl="1">
+		<div role="dialog" class="modal-dialog">
+			<Draggable>
+				<div class="popup">
+					<header class="title drag-handle">
+						Ingreso de propinas
+					</header>
+					<main class="body" style="font-family: 'Lato-Reg';">
+                        <div style="margin-bottom: 10px;">
+                            <span id="error1" class="alert error1">
+                                Monto de propinnas
+                            </span>
+                        </div>
+
+
+                        <!--<table >
+							<tr>
+								<td width="24">Mesero:</td>
+								<td width="10"></td>
+								<td width="66">
+									<select id="waiter" class="waiter-selection">
+										<option>Seleccione:</option><span>&#160;</span>
+										<t t-foreach='env.pos.users' t-as='user' t-key='user'>
+											<option t-att-value='user.id'> 
+												<t t-esc='user.name'/>
+											</option>
+										</t>
+									</select>
+								</td>
+							</tr>
+							<br/>	
+							
+						</table>-->
+
+						<table >
+							<tr>
+								<td width="24">Metodo:</td>
+								<td width="10"></td>
+								<td width="66">
+									<select id="tips" class="method-selection">
+										<option>Seleccione:</option><span>&#160;</span>
+
+										<t t-foreach="get_data.methods_tips" t-as="metodo" t-key="metodo">
+
+												<option t-att-value='metodo.id'> 
+												<t t-esc='metodo.name'/>
+											</option>
+										</t>
+									</select>
+								</td>
+							</tr>
+							<br/>
+						</table>
+						
+						<table>
+							<tr>
+								<td > Monto: </td>
+                                <td><input id="amount" type="number" min="1" class="input-field" required="required" name="amount"></input></td>
+							</tr>
+						</table>
+
+
+                    </main>
+					 <footer class="footer">
+	                    <div class="button cancel" t-on-click="cancelar()">Cancelar</div>
+	                    <div class="button" t-on-click="ingresar_propinas()">Ingresar propinas</div>
+	                    
+	                </footer>
+				</div>
+			</Draggable>
+		</div>
+	</t>
+
+</templates>

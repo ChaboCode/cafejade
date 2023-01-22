@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="CashClosingPopup" owl="1">
+        <div role="dialog" class="modal-dialog">
+            <Draggable>
+                <div class="popup">
+            
+                <header class="title drag-handle">
+                    Generación de corte de caja
+                </header>
+
+
+                <main class="body" style="font-family: 'Lato-Reg';">
+                        <div style="margin-bottom: 10px;">
+                            <span id="error1" class="alert error1">
+                                Monto Efectivo
+                            </span>
+                        </div>
+                        <table  class="popup-table">
+                            <tr>
+                                <td> Monto: </td>
+                                <td><input id="amount" type="number" min="1" class="input-field" required="required" name="amount"></input></td>
+                            </tr>
+                        </table>
+                    </main>
+
+                <footer class="footer">
+                    <div class="button cancel odoo-theme-color" t-on-click="cancelarCorteCaja()">Cancelar</div>
+                    <div class="button cancel odoo-theme-color" t-on-click="generarCorteCaja()">Generar</div>
+                    
+                </footer>
+            </div>
+        </Draggable>
+            
+        </div>
+    </t>
+
+</templates>

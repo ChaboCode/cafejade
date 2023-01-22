@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="model_access_form" model="ir.ui.view">
+        <field name="name">model.access.form</field>
+        <field name="model">model.perm</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="model_id" placeholder="Select Model Name .." required="1"
+                                   options="{'no_create':1,'no_open':1,'no_edit':1}"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="groups_id"
+                                   string="Groups" widget="many2many_tags"/>
+                        </group>
+                        <group>
+                            <field name="perm_edit" />
+                            <field name="perm_create" />
+                            <field name="perm_delete"/>
+                            <field name="perm_export" />
+                            <field name="model_has_active_field" invisible="1" />
+                            <field name="perm_archive"  attrs="{'invisible':[('model_has_active_field','=',False)]}"/>
+
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="model_access_tree" model="ir.ui.view">
+        <field name="name">model.access</field>
+        <field name="model">model.perm</field>
+        <field name="arch" type="xml">
+            <tree  >
+                <field name="model_id" required="1" options="{'no_create':1,'no_open':1,'no_edit':1}"/>
+                <field name="groups_id" force_save="1"  string="Groups" widget="many2many_tags"  />
+                <field name="perm_edit" />
+                <field name="perm_create" />
+                <field name="perm_delete"/>
+                <field name="perm_export" />
+                <field name="model_has_active_field" invisible="1" />
+                <field name="perm_archive"  attrs="{'readonly':[('model_has_active_field','=',False)]}"/>
+            </tree>
+        </field>
+    </record>
+    <!--TODO the most powerfull window action-->
+    <record id="model_access_window_action" model="ir.actions.act_window">
+        <field name="name">Module Access Config</field>
+        <field name="res_model">model.perm</field>
+        <field name="view_mode">tree,form</field>
+        <field name="target">current</field>
+    </record>
+
+    <menuitem id="model_access_menu_action" action="model_access_window_action" name="Module Access Config"
+              parent="base.menu_administration" sequence="1"/>
+</odoo>

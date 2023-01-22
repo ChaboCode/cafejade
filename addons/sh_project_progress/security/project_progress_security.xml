@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="project_progress_user_id" model="res.groups">
+        <field name="name">Enable Project Progress</field>
+    </record>
+</odoo>

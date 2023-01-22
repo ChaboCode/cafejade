@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t owl="1" t-name="DineInButton">
+        <div class="control-button js_check_dine" t-att-class="{ highlight: dineinstatus }" t-if="env.pos.config.module_pos_restaurant">
+            <i class="fa fa-building"/>
+            <span/>
+            <span>Dine-in</span>
+        </div>
+    </t>
+    <t owl="1" t-name="TakeAwayButton">
+        <div class="control-button js_check_takeaway" t-att-class="{ highlight: takeawaystatus }" t-if="env.pos.config.module_pos_restaurant">
+            <i class="fa fa-car"/>
+            <span/>
+            <span>Takeaway</span>
+        </div>
+    </t>
+</templates>

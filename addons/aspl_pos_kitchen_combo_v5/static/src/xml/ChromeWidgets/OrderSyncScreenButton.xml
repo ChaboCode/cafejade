@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="OrderSyncScreenButton" owl="1">
+        <div class="oe_status" t-on-click="onClick">
+            <div class="with-badge" t-att-badge="count">
+                <i class="fa fa-ticket" aria-hidden="true"/>
+            </div>
+        </div>
+   </t>
+
+
+   <t t-inherit="point_of_sale.ProductList" t-inherit-mode="extension">
+	 
+		<xpath expr="//div[hasclass('product-list-container')]" position="replace">
+		<div class="product-list-container">
+            <div t-if="props.products.length != 0" class="product-list">
+                <t t-foreach="props.products" t-as="product" t-key="product.id">
+                    <ProductItem product="product" t-if="product.only_in_combo === false" />
+                </t>
+            </div>
+            <div t-else="" class="product-list-empty">
+                <div class="product-list-empty">
+                    <t t-if="props.searchWord !== ''">
+                        <p>
+                            No results found for "
+                            <b t-esc="props.searchWord"></b>
+                            ".
+                        </p>
+                    </t>
+                    <t t-else="">
+                        <p>There are no products in this category.</p>
+                    </t>
+                </div>
+            </div>
+        </div>
+		</xpath>
+	</t>
+
+</templates>

@@ -1,0 +1,23 @@
+version: '2'
+services:
+  db:
+    image: postgres:11
+    environment:
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_USER=odoo
+      - POSTGRES_DB=postgres
+    restart: always             # run as a service
+
+  odoo13:
+    image: odoo:15
+    depends_on:
+      - db
+    ports:
+      - "10013:8069"
+      - "20013:8072" # live chat
+    tty: true
+    command: -- --dev=reload
+    volumes:
+      - ./addons:/mnt/addons
+      - ./etc:/etc/odoo
+    restart: always             # run as a service

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="Chrome" t-inherit="point_of_sale.Chrome" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[hasclass('pos')]//div[hasclass('pos-topheader')]//div[hasclass('pos-branding')]" position="replace">
+            <div class="pos-branding" t-if= "!env.isMobile">
+                 <t t-if="isTicketButtonShown">
+                    <img class="pos-logo" t-on-click="trigger('toggle-debug-widget')"
+                     src="/point_of_sale/static/src/img/logo.png" alt="Logo" />
+                    <TicketButton isTicketScreenShown="isTicketScreenShown" />
+                </t>
+                <t t-if="isKitchenScreen">
+                    <img class="pos-logo" t-on-click="trigger('toggle-debug-widget')"
+                     src="/aspl_pos_kitchen_combo/static/src/img/chef.png" alt="Logo" />
+                    <span class="custom-heading">
+                        KITCHEN
+                    </span>
+                </t>
+            </div>
+        </xpath>
+        <xpath expr="//Portal" position="replace">
+            <Portal target="'.pos .status-buttons-portal'">
+                <div class="status-buttons">
+                    <t t-if="!env.isMobile">
+                        <CashierName />
+                    </t>
+                    <t t-if="isTicketButtonShown">
+                        <OrderManagementButton t-if="env.pos.config.manage_orders" />
+                    </t>
+                    <SaleDetailsButton t-if="env.pos.proxy.printer" />
+                    <ProxyStatus t-if="env.pos.config.use_proxy" />
+                    <ClientScreenButton t-if="clientScreenButtonIsShown" />
+                    <SyncNotification />
+                    <KitchenScreenButton t-if="isManager" isKitchenScreen="isKitchenScreen"/>
+                    <OrderSyncScreenButton t-if="isManager"/>
+                    <HeaderButton />
+                </div>
+            </Portal>
+        </xpath>
+        <xpath expr="//div[hasclass('pos-content')]" position="replace">
+            <div class="pos-content">
+                <div class="window">
+                    <div class="subwindow">
+                        <div class="subwindow-container">
+                            <div class="subwindow-container-fix screens">
+                                <t isShown="!tempScreen.isShown" t-component="mainScreen.component"
+                                   t-props="mainScreenProps" t-key="mainScreen.name" orderData="state.orderData"/>
+                                <t t-if="tempScreen.isShown" t-component="tempScreen.component"
+                                   t-props="tempScreenProps" t-key="tempScreen.name" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <DebugWidget t-if="env.isDebug() and state.debugWidgetIsShown"
+                             t-transition="fade" />
+            </div>
+        </xpath>
+    </t>
+</templates>
+

@@ -1,0 +1,47 @@
+<odoo>
+    <record id="pos_order_search_status" model="ir.ui.view">
+        <field name="name">pos.order.status</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_order_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='posted']" position="after">
+                <separator/>
+                <filter domain="[('dine_in', '=', True)]" name="dinein" string="Dine In"/>
+                <filter domain="[('takeaway', '=', True)]" name="takeaway" string="Take Away"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="pos_config_view_form_inherit_takeaway_charges" model="ir.ui.view">
+        <field name="name">pos.config.form.inherit.pos.takeaway</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('o_settings_container')][3]" position="after">
+                <h2>Dine/Takeaway</h2>
+                <div class="row mt16 o_settings_container" id="takeaway_dinein">
+                <div class="col-xs-12 col-md-6 o_setting_box" >
+                    <div class="o_setting_left_pane">
+                        <field name="iface_takeaway_dine"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="iface_takeaway_dine"/>
+                        <div class="text-muted">
+                            Allow Takeaway/Dine In
+                        </div>
+                        <div class="content-group " attrs="{'invisible':[('iface_takeaway_dine','=',False)]}">
+                            <div class="row mt16">
+                                <label string="Take Away Product" for="takeaway_product_id" class="col-lg-3 o_light_label"/>
+                                <field name="takeaway_product_id" attrs="{'required':[('iface_takeaway_dine','=',True)]}"/>
+                            </div>
+                            <div class="row">
+                                <label string="Price" for="takeaway_charges" class="col-lg-3 o_light_label"/>
+                                <field name="takeaway_charges"/>
+                            </div>
+                        </div>
+                    </div> 
+                    </div>     
+            </div>
+        </xpath>
+        </field>
+    </record>
+</odoo>

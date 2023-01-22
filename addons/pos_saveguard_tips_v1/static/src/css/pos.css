@@ -1,0 +1,170 @@
+
+.cash_in{
+	background: #DE7E1E !important;
+    border: solid 1px #DE7E1E !important;
+    color: white !important;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+    background: #e2e2e2;
+    border: solid 1px #bfbfbf;
+    display: inline-block;
+    line-height: 38px;
+    min-width: 80px;
+    text-align: center;
+    border-radius: 3px;
+    padding: 0px 10px;
+    font-size: 18px;
+    margin-left: 6px;
+    margin-bottom: 6px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all linear 150ms;
+}
+
+.tipsreport{
+    background: #71D756 !important;
+    border: solid 1px #71D756 !important;
+    color: white !important;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+    background: #e2e2e2;
+    border: solid 1px #bfbfbf;
+    display: inline-block;
+    line-height: 38px;
+    min-width: 80px;
+    text-align: center;
+    border-radius: 3px;
+    padding: 0px 10px;
+    font-size: 18px;
+    margin-left: 6px;
+    margin-bottom: 6px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all linear 150ms;
+}
+
+.waiter_assign{
+    background: #2a57aa !important;
+    border: solid 1px #2a57aa !important;
+    color: white !important;
+    display: inline-block;
+    line-height: 38px;
+    min-width: 100px;
+    text-align: center;
+    border-radius: 3px;
+    padding: 0px 0px;
+    font-size: 15px;
+    width: 100%;
+
+}
+
+.save-tips-button{
+    background: #ff8a15!important;
+}
+
+.menuitem_pos_ogum{
+    border: solid 3px white !important;
+    border-radius: 20px;
+}
+.select_menuitem{
+    position: relative;
+    width: 130px;
+    height: 40px;
+    text-transform: capitalize;
+    color: #fff;
+    background: rgba(0, 0, 0, 0);
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+}
+
+.select_menuitem:focus{
+    outline: none;
+    border-color: rgba(0, 0, 0, 0);
+    box-shadow: none;
+}
+
+.options{
+
+    background: rgba(0, 0, 0, 0.5);
+   
+}
+
+.options:hover{
+
+    color:red !important;
+   
+}
+
+
+.cash_out{
+	background: #6EC89B !important;
+    border: solid 1px #64AF8A !important;
+    color: white !important;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+    background: #e2e2e2;
+    border: solid 1px #bfbfbf;
+    display: inline-block;
+    line-height: 38px;
+    min-width: 80px;
+    text-align: center;
+    border-radius: 3px;
+    padding: 0px 10px;
+    font-size: 18px;
+    margin-left: 6px;
+    margin-bottom: 6px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all linear 150ms;
+}
+
+.odoo-theme-color{
+	background: #875a7b !important;
+	color: white !important;
+}
+
+.odoo-theme-button{
+	background: #875a7b !important;
+	color: white !important;
+	font-size: 14px !important;
+}
+
+.error1{
+	color: #ec1010 !important;
+	font-size: inherit !important;
+	margin: 5px !important;
+	text-align: center !important;
+}
+
+.popup-table{
+	width: 100% !important;
+	line-height: 4rem !important;
+}
+
+.cashier-selection{
+	padding: 12px !important;
+    min-width: 80% !important;
+    border-radius: 5px !important;
+    background: #ffff !important;
+    font-size: 15px !important;
+}
+
+.waiter-selection{
+	padding: 12px !important;
+    min-width: 80% !important;
+    border-radius: 5px !important;
+    background: #ffff !important;
+    font-size: 15px !important;
+}
+
+.method-selection{
+	padding: 12px !important;
+    min-width: 80% !important;
+    border-radius: 5px !important;
+    background: #ffff !important;
+    color: black !important;
+    font-size: 15px !important;
+}

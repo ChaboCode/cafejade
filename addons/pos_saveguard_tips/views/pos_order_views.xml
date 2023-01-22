@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+	<record
+		id="pos_order_form_view_ogum" model="ir.ui.view">
+		<field name="name">pos.order.form</field>
+		<field name="model">pos.order</field>
+		<field name="inherit_id" ref="pos_restaurant.view_pos_pos_form" />
+		<field name="arch" type="xml">
+			<field name="table_id" position="after" >
+                <field name="waiter_id" />
+				<field name="waiter_old_id" />
+				<field name="motive_reasing" />
+            </field>
+
+			</field>
+	</record>
+</odoo>
+

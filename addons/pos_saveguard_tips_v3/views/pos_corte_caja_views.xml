@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		<!--  Vista para salida de efectivo Out -->
+		<record id="view_pos_corte_caja_tree_view" model="ir.ui.view">
+			<field name="name">pos.corte.caja.tree.view</field>
+			<field name="model">pos.corte.caja</field>
+			<field name="arch" type="xml">
+				<tree string="POS Cash In Out">
+					<field name="name"/>
+					<field name="user_id"/>
+					<field name="session_id"/>				
+					<field name="create_date"/>	
+				</tree>
+			</field>
+		</record>
+
+
+		<record id="view_pos_corte_caja_form_view" model="ir.ui.view">
+			<field name="name">pos.corte.caja.form.view</field>
+			<field name="model">pos.corte.caja</field>
+			<field name="arch" type="xml">
+				<form string="POS Cash In Out" version="9.0">
+					<sheet>
+						<group>
+							<group>
+								<field name="name"/>		
+								<field name="create_date"/>
+							</group>
+							<group>
+								<field name="user_id"/>
+								<field name="session_id"/>
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_pos_corte_caja">
+			<field name="name">Cortes de caja en punto de venta</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">pos.corte.caja</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<!--  Menu For POS Cash In Out -->
+		<menuitem 
+			id="menu_pos_corte_caja" 
+			name="Corte de caja" 
+			parent="point_of_sale.menu_point_rep" 
+			action="action_pos_corte_caja" 
+			sequence="11"/>
+
+		<record id="seq_cash_box_in_out" model="ir.sequence">
+			<field name="name">Cortes de caja</field>
+			<field name="code">pos.corte.caja</field>
+			<field name="prefix">Corte-/</field>
+			<field name="padding">5</field>
+			<field name="company_id" eval="False" />
+		</record>
+		
+	</data>
+</odoo>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="OrderLinesReceipt" t-inherit="point_of_sale.OrderLinesReceipt" t-inherit-mode="extension" owl="1">
+        <xpath expr="//t[@t-if='isSimple(line)']//WrappedProductNameLines" position="before">
+            <div style="font-size: 75%;">
+                <t t-foreach="line.combolines" t-as="comboline">
+                    <div>
+                        <t t-if="comboline.is_replaced == true">
+                            <span style="font-weight: bold;">REPLACE: </span>
+                            <t t-esc="comboline.product_name"/>
+                            <span> </span>
+                            <span> with <br/>
+                                <t t-esc="comboline.product_name_wrapped[0]"/>
+                            </span>
+                        </t>
+                        <t t-else="">
+                            <t t-esc="comboline.product_name_wrapped[0]"/>
+                        </t>
+                        <span t-if="comboline.price_display != 0">
+                              -  <t t-esc="env.pos.format_currency_no_symbol(comboline.price_display)"
+                                    class="price_display pos-receipt-combo-price-align"/>
+                        </span>
+                    </div>
+                    <WrappedProductNameLines line="comboline"/>
+                </t>
+            </div>
+        </xpath>
+    </t>
+</templates>

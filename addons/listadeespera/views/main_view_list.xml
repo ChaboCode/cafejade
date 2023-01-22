@@ -1,0 +1,68 @@
+<odoo>
+  <data>
+ <!--TREE-->
+  <record id="listaespera_tree_inheriti" model="ir.ui.view">
+    <field name="name">listaespera_tree.inheriti</field>
+    <field name="model">list.wait</field>
+    <field name="arch" type="xml">  
+    	  <tree>
+              <field  name="cliente_id"/>
+              <field  name="telefono"/>
+              <field  name="no_clientes"/>              
+              <field name="tiempo_espera" widget="float_time"/> 
+              <field name="piso_id"/>
+              <field name="mesa_sugerida_id"/>
+              <field name="mesa_asignada_ids"/>
+            <field name="status"/>
+          </tree>
+    </field>
+   </record>
+   <!--Form-->
+   <record id="listaespera_form_inheriti" model="ir.ui.view">
+    <field name="name">listaespera_form.inheriti</field>
+    <field name="model">list.wait</field>
+    <field name="arch" type="xml">  
+        <form>
+            <sheet>
+              <group>
+                  <group>
+                      <field  name="cliente_id"/>
+                       <field  name="telefono"/>
+                       <field  name="no_clientes"/>
+                       <label for="tiempo_espera"/>
+                       <div>
+                         <field name="tiempo_espera" widget="float_time" class="oe_inline"/> <span class="ml8">horas</span>
+                       </div>
+                                    
+                  </group>
+                  <group>
+                     <field name="piso_id"/> 
+                     <field name="mesa_sugerida_id"/>
+                      <field name="mesa_asignada_ids"/>
+                      <field name="status"/>   
+                  </group>  
+              </group>
+             
+            </sheet>
+          </form>
+    </field>
+   </record>
+   
+
+   <!--menu-->
+    <record id="action_custom_lista_espera" model="ir.actions.act_window">
+            <field name="name">Lista de espera</field>
+            <field name="res_model">list.wait</field>
+            <field name="view_mode">tree,form</field>
+        </record>  
+    
+      <menuitem 
+            name="Espera" 
+            id="menu_main_lista_espera" 
+            parent="point_of_sale.menu_point_rep" 
+            sequence="11" 
+            action="action_custom_lista_espera"/>
+
+  
+  </data>
+</odoo>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="KitchenScreen" owl="1">
+        <div class="kitchen-screen screen" t-ref="kitchen-screen">
+            <ul class="order-content" t-ref="order-content">
+                <t t-foreach="props.orderData" t-as="order" t-key="order.order_id">
+                    <OrderCard t-if="order.display" order="order"/>
+                </t>
+            </ul>
+            <div class="footer">
+                <button class="top-left" t-on-click="clickTopLeft">
+                    <i class="fa fa-caret-left" aria-hidden="true"></i>
+                </button>
+                <button class="double-left" t-on-click="clickDoubleLeft">
+                    <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+                </button>
+                <button class="left" t-on-click="clickLeft">
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                </button>
+                <button class="right" t-on-click="clickRight">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </button>
+                <button class="double-right" t-on-click="clickDoubleRight">
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                </button>
+                <button class="top-right" t-on-click="clickTopRight">
+                    <i class="fa fa-caret-right" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </t>
+</templates>

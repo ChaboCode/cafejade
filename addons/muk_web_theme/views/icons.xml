@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <menuitem id="base.menu_administration" name="Settings"
+                  web_icon="muk_web_theme,static/src/img/icons/settings.png"/>
+        <menuitem id="base.menu_management" name="Apps" web_icon="muk_web_theme,static/src/img/icons/apps.png"/>
+        <menuitem id="mail.menu_root_discuss" name="Discuss"
+                  web_icon="muk_web_theme,static/src/img/icons/discuss.png"/>
+
+        <!-- <menuitem id="calendar.mail_menu_calendar" name="Calendar" web_icon="muk_web_theme,static/src/img/icons/Calendar.png"/> -->
+        <menuitem id="contacts.menu_contacts" name="Contacts" web_icon="muk_web_theme,static/src/img/icons/Contacts.png"/>
+        <menuitem id="account.menu_finance" name="Finance" web_icon="muk_web_theme,static/src/img/icons/Invoicing.png"/>
+        <menuitem id="website.menu_website_configuration" name="Website" web_icon="muk_web_theme,static/src/img/icons/Website.png"/>
+        <menuitem id="website_slides.website_slides_menu_root" name="Elearning" web_icon="muk_web_theme,static/src/img/icons/eLearning.png"/>
+        <menuitem id="survey.menu_surveys" name="Surveys" web_icon="muk_web_theme,static/src/img/icons/Surveys.png"/>
+        <menuitem id="im_livechat.menu_livechat_root" name="Chat" web_icon="muk_web_theme,static/src/img/icons/Live Chat.png"/>
+    </data>
+</odoo>

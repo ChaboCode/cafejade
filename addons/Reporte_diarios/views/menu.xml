@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <!--accion principla-->
+   <record model="ir.actions.act_window" id="main_menu_repore_diario">
+        <field name="name">Reporte diario</field>
+        <field name="res_model">reporte.diario_empleados</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+     <menuitem
+     name="Reporte diario"
+     id="base_menu_reporte_diario"
+     parent="mrp.mrp_planning_menu_root"
+     action="Reporte_diarios.main_menu_repore_diario"/>
+   
+  
+  </data>
+</odoo>

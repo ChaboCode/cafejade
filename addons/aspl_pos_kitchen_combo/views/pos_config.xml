@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="aspl_pos_kitchen_combo_pos_config">
+        <field name="name">pos.config.form.view.inherit</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="inside">
+                <h2 name="order">Kitchen Screen</h2>
+                <div class="row mt16 o_settings_container" id="pos_wallet">
+                    <div class="col-xs-12 col-md-6 o_setting_box" id="enable_gift_voucher">
+                        <div class="o_setting_right_pane">
+                            <div class="content-group mt16">
+                                <div class="row mt16">
+                                    <label string="Restaurant Mode" for="restaurant_mode"
+                                           class="col-md-3 o_light_label"/>
+                                    <field name="restaurant_mode" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

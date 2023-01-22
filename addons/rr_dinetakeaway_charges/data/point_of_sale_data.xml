@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="product_product_takeaway" model="product.product">
+			<field name="name">Takeaway Charges</field>
+			<field name="categ_id" ref="point_of_sale.product_category_pos"/>
+			<field name="default_code">Charges</field>
+			<field name="weight">0.00</field>
+			<field name="available_in_pos">True</field>
+            <field name="standard_price">0.00</field>
+            <field name="list_price">0.00</field>
+            <field name="type">consu</field>
+			<field eval="[(5,)]" name="taxes_id"/>
+            <field name="uom_id" ref="uom.product_uom_unit"/>
+            <field name="uom_po_id" ref="uom.product_uom_unit"/>
+            <field name="purchase_ok">False</field>
+		</record>
+
+	</data>
+</odoo>

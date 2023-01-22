@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--TREE VIEW-->
+    <record id="reporte_diario_tree" model="ir.ui.view">
+        <field name="name">reporte_diario_tree</field>
+        <field name="model">reporte.diario_empleados</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="secuencia"/>
+               <field name="nombre_chef" />
+                <field name="fecha" />
+                <field name="estado"/>
+            </tree>
+        </field>
+    </record>
+   <!--SERACH-->
+    <record model="ir.ui.view" id="reporte_diario_search">
+      <field name="name">reporte_diario.search</field>
+      <field name="model">reporte.diario_empleados</field>
+      <field name="arch" type="xml">
+        <search string="Busqueda de reporte diario">
+               <field name="secuencia"/>
+               <field name="nombre_chef" />
+                <field name="fecha" />
+                <field name="estado"/>
+          <separator/>
+          
+          <group expand="0" string="Chef">
+            <filter string="Chef" name="nombre_chef"  domain="[]"   context="{'group_by':'nombre_chef'}"/>
+          </group>
+          <group expand="0" string="Estado">
+            <filter string="Estado" name="estado"  domain="[]"   context="{'group_by':'estado'}"/>
+          </group>
+          <group expand="0" string="Secuencia">
+            <filter string="Secuencia" name="secuencia"  domain="[]"   context="{'group_by':'secuencia'}"/>
+          </group>
+          <group expand="0" string="Fecha">
+            <filter string="Fecha" name="fecha"  domain="[]"   context="{'group_by':'fecha'}"/>
+          </group>
+
+        </search>
+      </field>
+    </record>
+     <!--FORM-->
+      <record id="repore_diario_view_fom" model="ir.ui.view">
+        <field name="name">repore_diario_view_form</field>
+        <field name="model">reporte.diario_empleados</field>
+        <field name="arch" type="xml">
+          <form>
+            <header>
+              <button name="action_confirm" string="Confirmar" type="object" 
+                   class="oe_highlight" attrs="{'invisible': [('estado', '!=', 'draft')]}"/>
+              <button name="action_update" string="Actualizar" type="object" 
+                 class="oe_highlight" groups="mrp.group_mrp_manager" 
+                 attrs="{'invisible': [('estado', '!=', 'confirm')]}"/>
+              <button name="action_cancel" string="Cancelar" type="object" 
+                class="oe_highlight"/>
+              <button name="action_reverze" string="Regresar a borrador" type="object" 
+                class="oe_highlight"
+                attrs="{'invisible': [('estado', '!=', 'cancel')]}"/>
+              <field name="estado" widget="statusbar"/>
+            </header>
+            <sheet>
+              <div class="oe_title">
+               <h1>
+                 <field name="secuencia" readonly="1"/>
+               </h1>
+             </div>
+            <group>
+              <group string="Nombre del Chef">
+                <field name="nombre_chef" nolabel="1"/>                
+              </group>
+              <group string="Fecha">
+                <field name="fecha" nolabel="1"/>                
+              </group>
+            </group>
+            <group string="Personal completo">
+              <field name="personal_completo" nolabel="1"/>
+            </group> 
+            <group string="Faltante de producto">
+                <field name="faltante_producto" nolabel="1">
+                  <tree editable="bottom" string="Faltante de producto">
+                    <field name="producto_id"/>
+                    <field name="cantidad"/>
+                    <field name="producto_linea_id" invisible="1"/>                    
+                  </tree>
+                  <form>
+                    <group>
+                    <field name="producto_id"/>
+                    <field name="cantidad"/>
+                    <field name="producto_linea_id" invisible="1"/>
+                  </group>
+                  </form>
+                  </field>
+            </group>
+             <group string="Retardos">
+                <field name="empleados_retardos_ids" nolabel="1">
+                  <tree editable="bottom" string="Retardos">
+                    <field name="empleados_id"/>
+                    <field name="nota"/>
+                    <field name="empleados_linea_id" invisible="1"/>                    
+                  </tree>
+                  <form>
+                    <group>
+                    <field name="empleados_id"/>
+                    <field name="nota"/>
+                    <field name="empleados_linea_id" invisible="1"/>
+                  </group>
+                  </form>
+                  </field>
+            </group>
+            <group string="Comentario">
+              <field name="comentario" nolabel="1"/>
+            </group>
+            </sheet>
+            <div class="oe_chatter">
+                   <field name="message_follower_ids" widget="mail_followers"/>
+                   <field name="activity_ids" widget="mail_activity"/>
+                   <field name="message_ids" widget="mail_thread"/>
+             </div>
+          </form>
+        </field>
+    </record>
+</odoo>

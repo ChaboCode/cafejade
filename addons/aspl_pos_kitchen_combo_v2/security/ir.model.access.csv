@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_remove_product_reason,remove_product_reason,model_remove_product_reason,,1,1,1,1
+access_order_line_cancel_reason,order_line_cancel_reason,model_order_line_cancel_reason,,1,1,1,1
+access_product_combo,access_product_combo,model_product_combo,,1,1,1,1
+access_pos_combo_line,access_pos_combo_line,model_pos_combo_line,,1,1,1,1
+access_pos_combo_line_line,access_pos_combo_line_line,model_pos_combo_line_line,,1,1,1,1

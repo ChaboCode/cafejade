@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+	<record
+		id="pos_config_only_form_view" model="ir.ui.view">
+		<field name="name">pos.config.extended.only.form</field>
+		<field name="model">pos.config</field>
+		<field name="inherit_id" ref="point_of_sale.pos_config_view_form" />
+		<field name="arch" type="xml">
+			<h2 name="order" position="before" >
+				<h2 name="saveguard">Salvaguarda</h2>
+				<div class="row mt16 o_settings_container">
+					<div class="o_setting_right_pane" invisible="True">
+                        <label for="salvaguardas_requerida" />
+                        <div><field name="salvaguardas_requerida" /></div>
+                    </div>
+					<div class="o_setting_right_pane">
+                        <label for="fecha_ultimo_recordatorio" />
+                        <div><field name="fecha_ultimo_recordatorio" readonly="True"/></div>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="monto_salvaguarda"/>
+                        <div><field name="monto_salvaguarda" /></div>
+                    </div>
+                    <div class="o_setting_right_pane">
+                                <label for="recordatorio_salvaguarda"/>
+                                <div><field name="recordatorio_salvaguarda" /></div>
+                            </div>
+
+                            <div class="o_setting_right_pane">
+                                <label for="payment_method_id"/>
+                                <div>
+                                    <field name="payment_method_id" widget="many2many_tags"/>
+                                </div>
+                            </div>
+                </div>			
+			</h2>
+
+			</field>
+	</record>
+
+</odoo>
+

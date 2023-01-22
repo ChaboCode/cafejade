@@ -1,0 +1,41 @@
+.floor-map .edit-table-button{
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    font-size: 20px;
+    line-height: 32px;
+    width: 32px;
+    text-align: center;
+    cursor: pointer;
+    margin: 8px;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.2);
+    border-image: initial;
+}
+
+.floor-map .edit-table-button.editing.active {
+    background: #444;
+    border-color: transparent;
+    color: white;
+}
+
+.edit-merge-split-bar {
+    position: absolute;
+    top: 0;
+    right: 40px;
+    margin: 8px;
+    line-height: 34px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    background: rgba(255,255,255,0.5);
+    z-index: 100;
+}
+
+.auto_table_width{
+    width:auto !important;
+    min-width: 117px;
+}

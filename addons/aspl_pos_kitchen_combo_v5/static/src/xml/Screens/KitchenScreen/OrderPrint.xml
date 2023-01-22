@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="OrderPrint" owl="1">
+        <div class="pos-receipt kitchen">
+            <h2 t-esc="order.pos_reference" class="pos-receipt-center-align"/>
+            <div class="extra-info">
+                <span>
+                    Table: <span t-if="order.table" style="font-weight: bold;" t-esc="order.table"/>
+                </span>
+                <span class="pos-receipt-right-align">
+                    Floor: <span t-if="order.floor" style="font-weight: bold;" t-esc="order.floor"/>
+                </span>
+            </div>
+            <div t-foreach="order.order_lines" t-as="line" t-key="line.id" class="cardline" style="font-size: 125%">
+                <span class="qty" >
+                    <t t-esc="line.qty"/>
+                </span>
+                <span class="name">
+                    <t t-esc="line.name"/>
+                </span>
+                <div t-foreach="line.combolines" t-as="comboline" class="comboline">
+                    <span class="qty">
+                        <t t-esc="comboline.qty"/>
+                    </span>
+                        <span class="name">
+                        <t t-esc="comboline.name"/>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </t>
+
+</templates>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="OrderCard" owl="1">
+        <li class="card-container">
+            <div class="header" t-attf-style="background-color: {{ headerClass }};">
+                <div class="header-container">
+                    <div class="image">
+                        <img class="order-icon" t-att-src="imageUrl"/>
+                    </div>
+                    <div class="top-line">
+                        <div class="table-name">
+                            Mesa : <t t-if="props.order.table" t-esc="props.order.table"/>
+                        </div>
+                        <div class="floor-name">
+                            <t t-if="props.order.floor">[<t t-esc="props.order.floor"/>]</t>
+                        </div>
+                    </div><br/>
+                    <div class="midel-line">
+                        <div class="table-guest">
+                            Invitados : <t t-esc="props.order.guests"/>
+                        </div>
+                        <div class="order-time">
+                            <t t-esc="props.order.order_time"/>
+                        </div>
+                    </div><br/>
+                    <div class="top-line">
+                        <div class="serve-name">
+                            <t t-esc="props.order.user_name"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="body">
+                <ul class="cardlines">
+                    <t t-foreach="props.order.order_lines" t-as="line" t-key="line.id">
+                        <OrderCardLine line="line" popup="false"/>
+                    </t>
+                </ul>
+            </div>
+            <div class="card-footer">
+                <button class="done"
+                        t-if="env and env.pos and env.pos.user and env.pos.user.kitchen_screen_user === 'manager'"
+                        t-on-click="clickOrderState" t-attf-style="color: {{ orderStateColor }};">
+
+                    <t t-if ="props.order.order_state== 'Start'">
+                        Iniciar
+                    </t>
+
+                    <t t-if ="props.order.order_state== 'Done'">
+                        Hecho
+                    </t>
+                    <t t-if ="props.order.order_state == 'Deliver'">
+                        Listo para entrega
+                    </t>
+                    <t t-if ="props.order.order_state == 'Complete'">
+                        Completado
+                    </t>
+
+                </button>
+                <button class="print" t-on-click="printOrder">
+                    <i class="fa fa-print" aria-hidden="true"></i>
+                </button>
+                <div class="order-ref">
+                    <t t-esc="props.order.pos_reference"/>
+                </div>
+            </div>
+        </li>
+    </t>
+
+</templates>
